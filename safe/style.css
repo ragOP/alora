@@ -531,7 +531,7 @@
 
             @font-face {
                 font-family: 'JudgemeStar';
-                src: url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAScAA0AAAAABrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAEgAAAABoAAAAcbyQ+3kdERUYAAARgAAAAHgAAACAAMwAGT1MvMgAAAZgAAABGAAAAVi+vS9xjbWFwAAAB8AAAAEAAAAFKwBMjvmdhc3AAAARYAAAACAAAAAj//wADZ2x5ZgAAAkAAAAEJAAABdH33LXtoZWFkAAABMAAAAC0AAAA2BroQKWhoZWEAAAFgAAAAHAAAACQD5QHQaG10eAAAAeAAAAAPAAAAFAYAAABsb2NhAAACMAAAAA4AAAAOAO4AeG1heHAAAAF8AAAAHAAAACAASgAvbmFtZQAAA0wAAADeAAABkorWfVZwb3N0AAAELAAAACkAAABEp3ubLXgBY2BkYADhPPP4OfH8Nl8ZuJkYQODS2fRrCPr/aSYGxq1ALgcDWBoAO60LkwAAAHgBY2BkYGDc+v80gx4TAwgASaAICmABAFB+Arl4AWNgZGBgYGPQYWBiAAIwyQgWc2AAAwAHVQB6eAFjYGRiYJzAwMrAwejDmMbAwOAOpb8ySDK0MDAwMbByMsCBAAMCBKS5pjA4PGB4wMR44P8BBj3GrQymQGFGkBwAjtgK/gAAeAFjYoAAEA1jAwAAZAAHAHgB3crBCcAwDEPRZydkih567CDdf4ZskmLwFBV8xBfCaC4BXkOUmx4sU0h2ngNb9V0vQCxaRKIAevT7fGWuBrEAAAAAAAAAAAA0AHgAugAAeAF9z79Kw1AUx/FzTm7un6QmJtwmQ5Bg1abgEGr/BAqlU6Gju+Cgg1MkQ/sA7Vj7BOnmO/gUvo2Lo14NqIO6/IazfD8HEODtmQCfoANwNsyp2/GJt3WKQrd1NLiYYWx2PBqOsmJMEOznPOTzfSCrhAtbbLdmeFLJV9eKd63WLrZcIcuaEVdssWCKM6pLCfTVOYbz/0pNSMSZKLIZpvh78sAUH6PlMrreTCabP9r+Z/puPZ2ur/RqpQHgh+MIegCnXeM4MRAPjYN//5tj4ZtTjkFqEdmeMShlEJ7tVAly2TAkx6R68Fl4E/aVvn8JqHFQ4JS1434gXKcuL31dDhzs3YbsEOAd/IU88gAAAHgBfY4xTgMxEEVfkk0AgRCioKFxQYd2ZRtpixxgRU2RfhU5q5VWseQ4JdfgAJyBlmNwAM7ABRhZQ0ORwp7nr+eZAa54YwYg9zm3ynPOeFRe8MCrciXOh/KSS76UV5L/iDmrLiS5AeU519wrL3jmSbkS5115yR2fyivJv9kx0ZMZ2RLZw27q87iNQi8EBo5FSPIMw3HqBboi5lKTGAGDp8FKXWP+t9TU01Lj5His1Ba6uM9dTEMwvrFmbf5GC/q2drW3ruXUhhsCiQOjznFlCzYhHUZp4xp76vsvQh89CQAAeAFjYGJABowM6IANLMrEyMTIzMjCXpyRWJBqZshWXJJYBKOMAFHFBucAAAAAAAAB//8AAngBY2BkYGDgA2IJBhBgAvKZGViBJAuYxwAABJsAOgAAeAFjYGBgZACCk535hiD60tn0azAaAEqpB6wAAA==") format("woff");
+                src: url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAScAA0AAAAABrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAEgAAAABoAAAAcbyQ+3kdERUYAAARgAAAAHgAAACAAMwAGT1MvMgAAAZgAAABGAAAAVi+vS9xjbWFwAAAB8AAAAEAAAAFKwBMjvmdhc3AAAARYAAAACAAAAAj//wADZ2x5ZgAAAkAAAAEJAAABdH33LXtoZWFkAAABMAAAAC0AAAA2BroQKWhoZWEAAAFgAAAAHAAAACQD5QHQaG10eAAAAeAAAAAPAAAAFAYAAABsb2NhAAACMAAAAA4AAAAOAO4AeG1heHAAAAF8AAAAHAAAACAASgAvbmFtZQAAA0wAAADeAAABkorWfVZwb3N0AAAELAAAACkAAABEp3ubLXgBY2BkYADhPPP4OfH8Nl8ZuJkYQODS2fRrCPr/aSYGxq1ALgcDWBoAO60LkwAAAHgBY2BkYGDc+v80gx4TAwgASaAICmABAFB+Arl4AWNgZGBgYGPQYWBiAAIwyQgWc2AAAwAHVQB6eAFjYGRiYJzAwMrAwejDmMbAwOAOpb8ySDK0MDAwMbByMsCBAAMCBKS5pjA4PGB4wMR44P8BBj3GrQymQGFGkBwAjtgK/style-element-2/FzTm7un6QmJtwmQ5Bg1abgEGr/BAqlU6Gju+Cgg1MkQ/sA7Vj7BOnmO/style-element-5/IazfD8HEODtmQCfoANwNsyp2/GJt3WKQrd1NLiYYWx2PBqOsmJMEOznPOTzfSCrhAtbbLdmeFLJV9eKd63WLrZcIcuaEVdssWCKM6pLCfTVOYbz/0pNSMSZKLIZpvh78sAUH6PlMrreTCabP9r+Z/puPZ2ur/RqpQHgh+MIegCnXeM4MRAPjYN//5tj4ZtTjkFqEdmeMShlEJ7tVAly2TAkx6R68Fl4E/aVvn8JqHFQ4JS1434gXKcuL31dDhzs3YbsEOAd/IU88gAAAHgBfY4xTgMxEEVfkk0AgRCioKFxQYd2ZRtpixxgRU2RfhU5q5VWseQ4JdfgAJyBlmNwAM7ABRhZQ0ORwp7nr+eZAa54YwYg9zm3ynPOeFRe8MCrciXOh/KSS76UV5L/iDmrLiS5AeU519wrL3jmSbkS5115yR2fyivJv9kx0ZMZ2RLZw27q87iNQi8EBo5FSPIMw3HqBboi5lKTGAGDp8FKXWP+t9TU01Lj5His1Ba6uM9dTEMwvrFmbf5GC/q2drW3ruXUhhsCiQOjznFlCzYhHUZp4xp76vsvQh89CQAAeAFjYGJABowM6IANLMrEyMTIzMjCXpyRWJBqZshWXJJYBKOMAFHFBucAAAAAAAAB//8AAngBY2BkYGDgA2IJBhBgAvKZGViBJAuYxwAABJsAOgAAeAFjYGBgZACCk535hiD60tn0azAaAEqpB6wAAA==") format("woff");
                 font-weight: normal;
                 font-style: normal
             }
@@ -5249,7 +5249,7 @@
 
 /* ===== Extracted CSS ===== */
 
-                                                                [data-id="gOK1D_jG-7"].gp-button-base::before, [data-id="gOK1D_jG-7-interaction"].gp-button-base::before {
+                                                                [data-id="style-element-1-7"].gp-button-base::before, [data-id="style-element-1-7-interaction"].gp-button-base::before {
                                                                     content: "";
                                                                     height: 100%;
                                                                     width: 100%;
@@ -5266,7 +5266,7 @@
                                                                     border-top-right-radius: 8px;
                                                                 }
 
-                                                                [data-id="gOK1D_jG-7"]:hover::before, [data-id="gOK1D_jG-7-interaction"]:hover::before {
+                                                                [data-id="style-element-1-7"]:hover::before, [data-id="style-element-1-7-interaction"]:hover::before {
                                                                 }
                                                             
 
@@ -6925,10 +6925,10 @@
 
 /* ===== Extracted CSS ===== */
 
-                                                .gTSRaisIok {
+                                                .cta-button-3 {
                                                 }
 
-                                                .gTSRaisIok u {
+                                                .cta-button-3 u {
                                                     text-decoration-color: #8F414D !important;
                                                 }
                                             
@@ -8754,7 +8754,7 @@
 
 /* ===== Extracted CSS ===== */
 
-                                                                [data-id="gIWU0FXq9a"].gp-button-base::before, [data-id="gIWU0FXq9a-interaction"].gp-button-base::before {
+                                                                [data-id="style-element-6"].gp-button-base::before, [data-id="style-element-6-interaction"].gp-button-base::before {
                                                                     content: "";
                                                                     height: 100%;
                                                                     width: 100%;
@@ -8771,7 +8771,7 @@
                                                                     border-top-right-radius: 8px;
                                                                 }
 
-                                                                [data-id="gIWU0FXq9a"]:hover::before, [data-id="gIWU0FXq9a-interaction"]:hover::before {
+                                                                [data-id="style-element-6"]:hover::before, [data-id="style-element-6-interaction"]:hover::before {
                                                                 }
                                                             
 
@@ -10668,14 +10668,14 @@
 
 /* ===== Extracted CSS ===== */
 
-                                                        .gQY24ZcP74 {
+                                                        .cta-button-7 {
                                                             overflow: hidden;
                                                         }
                                                     
 
 /* ===== Extracted CSS ===== */
 
-                                                .gS1CruvBaN {
+                                                .cta-button-5 {
                                                 }
 
                                                 @media (max-width: 767px) {
@@ -10690,14 +10690,14 @@
 
 /* ===== Extracted CSS ===== */
 
-                                                .gCoNG2TXnF {
+                                                .cta-button-6 {
                                                 }
 
-                                                .gCoNG2TXnF > figure > img {
+                                                .cta-button-6 > figure > img {
                                                 }
 
                                                 @media (max-width: 500px) {
-                                                    .gCoNG2TXnF > figure > img {
+                                                    .cta-button-6 > figure > img {
                                                         transform: rotate(90deg);
                                                         /* adjust angle as needed */
                                                         margin: 0 auto;
@@ -11767,7 +11767,7 @@
 
 /* ===== Extracted CSS ===== */
 
-                                                                [data-id="gMqQYv3Cy6"].gp-button-base::before, [data-id="gMqQYv3Cy6-interaction"].gp-button-base::before {
+                                                                [data-id="style-element-4"].gp-button-base::before, [data-id="style-element-4-interaction"].gp-button-base::before {
                                                                     content: "";
                                                                     height: 100%;
                                                                     width: 100%;
@@ -11784,7 +11784,7 @@
                                                                     border-top-right-radius: 8px;
                                                                 }
 
-                                                                [data-id="gMqQYv3Cy6"]:hover::before, [data-id="gMqQYv3Cy6-interaction"]:hover::before {
+                                                                [data-id="style-element-4"]:hover::before, [data-id="style-element-4-interaction"]:hover::before {
                                                                 }
                                                             
 
@@ -13316,10 +13316,10 @@
 
 /* ===== Extracted CSS ===== */
 
-                                                .gZ6NleL6-L {
+                                                .cta-button-4-L {
                                                 }
 
-                                                .gZ6NleL6-L u {
+                                                .cta-button-4-L u {
                                                     text-decoration-color: #8F414D !important;
                                                 }
                                             
@@ -14055,7 +14055,7 @@
 
 /* ===== Extracted CSS ===== */
 
-                                                        .gVVhwzBCMy {
+                                                        .cta-button-2 {
                                                             overflow: hidden;
                                                         }
                                                     
@@ -15416,7 +15416,7 @@
 
 /* ===== Extracted CSS ===== */
 
-                                                                                    [data-id="gSB1Qt3_zH"].gp-button-base::before, [data-id="gSB1Qt3_zH-interaction"].gp-button-base::before {
+                                                                                    [data-id="style-element-3"].gp-button-base::before, [data-id="style-element-3-interaction"].gp-button-base::before {
                                                                                         content: "";
                                                                                         height: 100%;
                                                                                         width: 100%;
@@ -15433,7 +15433,7 @@
                                                                                         border-top-right-radius: 8px;
                                                                                     }
 
-                                                                                    [data-id="gSB1Qt3_zH"]:hover::before, [data-id="gSB1Qt3_zH-interaction"]:hover::before {
+                                                                                    [data-id="style-element-3"]:hover::before, [data-id="style-element-3-interaction"]:hover::before {
                                                                                     }
                                                                                 
 
@@ -16668,12 +16668,12 @@
 
 /* ===== Extracted CSS ===== */
 
-                                .gFxcgvRlXF {
+                                .cta-button-1 {
                                     z-index: 1000;
                                 }
 
                                 @media (max-width: 500px) {
-                                    .gFxcgvRlXF {
+                                    .cta-button-1 {
                                         z-index: 0;
                                     }
                                 }
