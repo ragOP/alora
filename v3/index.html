@@ -378,10 +378,46 @@
     width: 100%;
     max-width: 100%;
     display: block;
-    margin: 0 0 12px;
+    margin: 0;
     border-radius: 8px;
     border: 1px solid #e5e5e5;
-    background: #000;
+    background: #111;
+    object-fit: cover;
+  }
+  .testi-video-wrap {
+    position: relative;
+    margin: 0 0 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    background: #111;
+  }
+  .testi-play-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 68px;
+    height: 68px;
+    border-radius: 999px;
+    border: 0;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .testi-play-btn:hover {
+    background: rgba(224, 32, 32, 0.9);
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+  .testi-video-wrap.is-playing .testi-play-btn {
+    opacity: 0;
+    pointer-events: none;
   }
   .testi-author { font-size: 13px; font-weight: 700; color: #111; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e5e5e5; }
   .testi-author span { font-weight: 400; color: #888; }
@@ -917,10 +953,13 @@
   <div class="section-q">What do real womens say about it?</div>
 
   <div class="testimonial">
-    <video class="testi-video" controls playsinline preload="metadata">
-      <source src="/v3/1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div class="testi-video-wrap">
+      <video class="testi-video" playsinline preload="metadata" poster="/v3/1cover.png">
+        <source src="/v3/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button class="testi-play-btn" type="button" aria-label="Play video">▶</button>
+    </div>
     <div class="testi-stars">★★★★★</div>
     <div class="testi-title">"Surgery cancelled. 12km walk last weekend."</div>
     <div class="testi-meta"><strong>✓ Verified Purchase</strong> · Reviewed in Germany</div>
@@ -933,10 +972,13 @@
   </div>
 
   <div class="testimonial">
-    <video class="testi-video" controls playsinline preload="metadata">
-      <source src="/v3/2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div class="testi-video-wrap">
+      <video class="testi-video" playsinline preload="metadata" poster="/v3/2cover.png">
+        <source src="/v3/2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button class="testi-play-btn" type="button" aria-label="Play video">▶</button>
+    </div>
     <div class="testi-stars">★★★★★</div>
     <div class="testi-title">"€6,000 on treatments that failed. This cost less than two sessions."</div>
     <div class="testi-meta"><strong>✓ Verified Purchase</strong> · Reviewed in Germany</div>
@@ -945,10 +987,13 @@
   </div>
 
   <div class="testimonial">
-    <video class="testi-video" controls playsinline preload="metadata">
-      <source src="/v3/3.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div class="testi-video-wrap">
+      <video class="testi-video" playsinline preload="metadata" poster="/v3/3cover.png">
+        <source src="/v3/3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button class="testi-play-btn" type="button" aria-label="Play video">▶</button>
+    </div>
     <div class="testi-stars">★★★★★</div>
     <div class="testi-title">"Four years of being told to just accept it. Finally an answer."</div>
     <div class="testi-meta"><strong>✓ Verified Purchase</strong> · Reviewed in Germany</div>
@@ -1194,6 +1239,31 @@
   const d = new Date();
   const el = document.getElementById('pubDate');
   if (el) el.textContent = `${months[d.getMonth()]} ${d.getFullYear()}`;
+
+  // TESTIMONIAL VIDEOS
+  document.querySelectorAll('.testi-video-wrap').forEach(wrap => {
+    const video = wrap.querySelector('.testi-video');
+    const btn = wrap.querySelector('.testi-play-btn');
+    if (!video || !btn) return;
+
+    const showPaused = () => {
+      wrap.classList.remove('is-playing');
+      video.controls = false;
+    };
+
+    const showPlaying = () => {
+      wrap.classList.add('is-playing');
+      video.controls = true;
+    };
+
+    btn.addEventListener('click', () => {
+      video.play().then(showPlaying).catch(() => {});
+    });
+
+    video.addEventListener('play', showPlaying);
+    video.addEventListener('pause', showPaused);
+    video.addEventListener('ended', showPaused);
+  });
 </script>
 
 </body>
