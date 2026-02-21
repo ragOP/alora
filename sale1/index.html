@@ -215,11 +215,14 @@
                 margin-bottom: 0px !important;
                 padding-bottom: 0px !important;
             }
-            /* Target text-content-57 directly */
+            /* Target text-content-57 directly - 50% closer with negative margin */
             div[data-id="text-content-57"] {
-                margin-top: 0px !important;
+                margin-top: -15px !important;
                 padding-top: 0px !important;
                 margin-bottom: 4px !important;
+            }
+            div[data-id="text-content-14"] {
+                margin-bottom: -15px !important;
             }
             /* Target the gp-row that contains text-content-57 - reduce its margin */
             gp-row[data-id="goJWKk7H21"] > div:last-child {
@@ -5436,19 +5439,19 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
         <script src='https://assets.gemcommerce.com/assets-v2/gp-sticky-v7-5.js?v=1756938901162' defer></script>
         <script src="/sale1/script.js"></script>
     <script>
-        // Force reduce spacing between "And you're absolutely allowed" and "The Real Problem"
+        // Force reduce spacing between "And you're absolutely allowed" and "The Real Problem" - 50% closer
         document.addEventListener('DOMContentLoaded', function() {
-            // Target text-content-14
+            // Target text-content-14 - use negative margin to pull closer
             const text14 = document.querySelector('[data-id="text-content-14"]');
             if (text14) {
-                text14.style.marginBottom = '0px';
+                text14.style.marginBottom = '-15px';
                 text14.style.paddingBottom = '0px';
             }
             
-            // Target text-content-57
+            // Target text-content-57 - use negative margin to pull closer
             const text57 = document.querySelector('[data-id="text-content-57"]');
             if (text57) {
-                text57.style.marginTop = '0px';
+                text57.style.marginTop = '-15px';
                 text57.style.paddingTop = '0px';
                 text57.style.marginBottom = '4px';
             }
@@ -5456,7 +5459,7 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
             // Target the gp-row containing text-content-14
             const rowGuCn = document.querySelector('[data-id="guCnZGx1ms"]');
             if (rowGuCn) {
-                rowGuCn.style.marginBottom = '4px';
+                rowGuCn.style.marginBottom = '-10px';
             }
             
             // Target the parent row
@@ -5466,7 +5469,7 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
                 if (children.length > 0) {
                     const lastChild = children[children.length - 1];
                     if (lastChild && lastChild.querySelector('[data-id="text-content-57"]')) {
-                        lastChild.style.marginTop = '0px';
+                        lastChild.style.marginTop = '-15px';
                         lastChild.style.paddingTop = '0px';
                     }
                 }
@@ -5486,10 +5489,18 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
                     const mb = window.getComputedStyle(el).marginBottom;
                     const mt = window.getComputedStyle(el).marginTop;
                     const pt = window.getComputedStyle(el).paddingTop;
-                    if (parseInt(mb) > 10 || parseInt(mt) > 10 || parseInt(pt) > 10) {
-                        el.style.marginTop = '0px';
-                        el.style.marginBottom = '0px';
-                        el.style.paddingTop = '0px';
+                    const pb = window.getComputedStyle(el).paddingBottom;
+                    if (parseInt(mb) > 5) {
+                        el.style.marginBottom = Math.max(0, parseInt(mb) * 0.5) + 'px';
+                    }
+                    if (parseInt(mt) > 5) {
+                        el.style.marginTop = Math.max(0, parseInt(mt) * 0.5) + 'px';
+                    }
+                    if (parseInt(pt) > 5) {
+                        el.style.paddingTop = Math.max(0, parseInt(pt) * 0.5) + 'px';
+                    }
+                    if (parseInt(pb) > 5) {
+                        el.style.paddingBottom = Math.max(0, parseInt(pb) * 0.5) + 'px';
                     }
                 }
             }
