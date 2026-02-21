@@ -14,8 +14,24 @@
         <title>Halsten Stride - Get Your Life Back From Gluteal Tendinopathy
 </title>
      
-        
-        
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1686948372258756');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1686948372258756&ev=PageView&noscript=1"/>
+</noscript>
+
         
     
 
@@ -289,6 +305,23 @@
                 font-size: 0.8em !important;
             }
         </style>
+        <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+        fbq('track', 'ViewContent', {
+          content_name: 'Alorament Flex',
+          content_ids: ['alorament-flex'],
+          content_type: 'product'
+        });
+        </script>
         
         
         
@@ -5556,6 +5589,25 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
         <script src='https://assets.gemcommerce.com/assets-v2/gp-product-v7-5.js?v=1756938901162' defer></script>
         <script src='https://assets.gemcommerce.com/assets-v2/gp-sticky-v7-5.js?v=1756938901162' defer></script>
         <script src="/sale1/script.js"></script>
+    <script>
+        // Fire InitiateCheckout when user clicks any buy button
+        document.querySelectorAll('a.gp-button-base[href*="alorament.com/cart/"]').forEach(function(button) {
+            button.addEventListener('click', function() {
+                fbq('track', 'InitiateCheckout');
+            });
+        });
+        // Pass fbclid from URL to Shopify checkout link (keeps FB attribution)
+        const params = new URLSearchParams(window.location.search);
+        const fbclid = params.get('fbclid');
+        if (fbclid) {
+            document.querySelectorAll('a[href*="alorament.com"], a[href*="checkout"]')
+                .forEach(function(link) {
+                    const url = new URL(link.href);
+                    url.searchParams.set('fbclid', fbclid);
+                    link.href = url.toString();
+                });
+        }
+    </script>
     <script>
         // Force reduce spacing between "And you're absolutely allowed" and "The Real Problem" - 50% closer
         document.addEventListener('DOMContentLoaded', function() {
