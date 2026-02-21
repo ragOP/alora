@@ -71,6 +71,170 @@
                     text-align: center !important;
                 }
             }
+            /* Make all CTA buttons 50% taller */
+            .gp-button-base[data-id*="cta-button"],
+            .gp-button-base[data-id*="button"],
+            .cta-button-1,
+            .cta-button-2,
+            .cta-button-3,
+            .cta-button-4-7,
+            [data-id*="cta-button"],
+            [data-id="gmMPVv5lvJ"],
+            [data-id="gxoB_8TqH5"] {
+                padding-top: 18px !important;
+                padding-bottom: 18px !important;
+            }
+            [data-id="gmMPVv5lvJ"] {
+                padding-top: 22.5px !important;
+                padding-bottom: 22.5px !important;
+            }
+            @media (max-width: 767px) {
+                .gp-button-base[data-id*="cta-button"],
+                .gp-button-base[data-id*="button"],
+                .cta-button-1,
+                .cta-button-2,
+                .cta-button-3,
+                .cta-button-4-7,
+                [data-id*="cta-button"],
+                [data-id="gmMPVv5lvJ"],
+                [data-id="gxoB_8TqH5"] {
+                    padding-top: 18px !important;
+                    padding-bottom: 18px !important;
+                }
+                [data-id="gmMPVv5lvJ"] {
+                    padding-top: 22.5px !important;
+                    padding-bottom: 22.5px !important;
+                }
+            }
+            /* Reduce spacing between sections throughout the page */
+            gp-row[style*="--pt:25px"],
+            gp-row[style*="--pb:48px"],
+            gp-row[style*="--pt:24px"],
+            gp-row[style*="--pb:24px"] {
+                --pt: 12px !important;
+                --pb: 20px !important;
+            }
+            [data-id="goJWKk7H21"] {
+                --pt: 12px !important;
+                --pb: 20px !important;
+            }
+            [data-id="text-content-57"] {
+                --mb: 18px !important;
+                --pt: 12px !important;
+                --pb: 12px !important;
+            }
+            [data-id="content-row-44"] {
+                --pt: 12px !important;
+                --pb: 12px !important;
+            }
+            /* Reduce large margins throughout */
+            [style*="--mb:36px"],
+            [style*="--mb:30px"],
+            [style*="--mb:24px"] {
+                --mb: 12px !important;
+            }
+            [style*="--mb:20px"] {
+                --mb: 10px !important;
+            }
+            /* Reduce padding on sections */
+            [style*="--pt:24px"] {
+                --pt: 12px !important;
+            }
+            [style*="--pb:24px"] {
+                --pb: 12px !important;
+            }
+            [style*="--pt:25px"] {
+                --pt: 12px !important;
+            }
+            [style*="--pb:48px"] {
+                --pb: 20px !important;
+            }
+            @media (max-width: 767px) {
+                gp-row[style*="--pt-mobile:15px"],
+                gp-row[style*="--pb-mobile:15px"] {
+                    --pt-mobile: 8px !important;
+                    --pb-mobile: 12px !important;
+                }
+                [data-id="goJWKk7H21"] {
+                    --pt-mobile: 8px !important;
+                    --pb-mobile: 12px !important;
+                }
+                [data-id="text-content-57"] {
+                    --mb-mobile: 10px !important;
+                    --pt-mobile: 12px !important;
+                    --pb-mobile: 12px !important;
+                }
+                [style*="--mb-mobile:16px"] {
+                    --mb-mobile: 8px !important;
+                }
+            }
+            /* Specifically reduce space between "And you're absolutely allowed" and "The Real Problem" */
+            [data-id="text-content-14"] {
+                --mb: 0px !important;
+                margin-bottom: 0px !important;
+            }
+            [data-id="guCnZGx1ms"] {
+                --mb: 4px !important;
+                margin-bottom: 4px !important;
+            }
+            [data-id="text-content-57"] {
+                --mb: 4px !important;
+                --pt: 4px !important;
+                margin-bottom: 4px !important;
+                padding-top: 4px !important;
+            }
+            /* Reduce spacing in the row between these sections */
+            gp-row[data-id="guCnZGx1ms"] + gp-row,
+            gp-row[data-id="guCnZGx1ms"] ~ [data-id="text-content-57"] {
+                margin-top: 0px !important;
+            }
+            /* Force reduce spacing with direct CSS - override everything */
+            div[data-id="text-content-14"].text-content-14 {
+                margin-bottom: 0px !important;
+                padding-bottom: 0px !important;
+            }
+            gp-row[data-id="guCnZGx1ms"].guCnZGx1ms {
+                margin-bottom: 4px !important;
+            }
+            div[data-id="text-content-57"].text-content-57 {
+                margin-top: 0px !important;
+                margin-bottom: 4px !important;
+                padding-top: 4px !important;
+            }
+            /* Target the parent row that contains text-content-14 */
+            gp-row[data-id="guCnZGx1ms"] {
+                margin-bottom: 4px !important;
+            }
+            /* Target the section that comes after guCnZGx1ms */
+            gp-row[data-id="guCnZGx1ms"] ~ gp-row,
+            gp-row[data-id="guCnZGx1ms"] ~ div[data-id="text-content-57"] {
+                margin-top: 0px !important;
+            }
+            /* Aggressive spacing reduction - target all possible gaps */
+            div[data-id="text-content-14"] {
+                margin-bottom: 0px !important;
+                padding-bottom: 0px !important;
+            }
+            /* Target text-content-57 directly */
+            div[data-id="text-content-57"] {
+                margin-top: 0px !important;
+                padding-top: 0px !important;
+                margin-bottom: 4px !important;
+            }
+            /* Target the gp-row that contains text-content-57 - reduce its margin */
+            gp-row[data-id="goJWKk7H21"] > div:last-child {
+                margin-top: 0px !important;
+            }
+            /* Target any gap between gp-row closing and text-content-57 */
+            gp-row[data-id="goJWKk7H21"] + div[data-id="text-content-57"],
+            gp-row ~ div[data-id="text-content-57"] {
+                margin-top: 0px !important;
+                padding-top: 0px !important;
+            }
+            /* Use universal selector to catch any spacing */
+            * + div[data-id="text-content-57"] {
+                margin-top: 0px !important;
+            }
         </style>
         
         
@@ -84,11 +248,11 @@
                 <section class="gp-mx-auto gp-max-w-full [&_*]:gp-max-w-full " style="--w:100%;--w-tablet:calc(var(--g-ct-w, 100%) + 2 * var(--g-ct-p, 15px));--w-mobile:calc(var(--g-ct-w, 100%) + 2 * var(--g-ct-p, 15px));--pl:none;--pl-tablet:none;--pl-mobile:none;--pr:none;--pr-tablet:none;--pr-mobile:none">
                     <gp-row gp-data='{"background":{"desktop":{"attachment":"scroll","color":"#212529","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"preload":false,"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"g8ITfTkL1z"}' data-id="g8ITfTkL1z" id="g8ITfTkL1z" data-same-height-subgrid-container class="g8ITfTkL1z gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--blockPadding:base;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--cg:16px;--rg:0px;--gtc:minmax(0, 12fr);--w:100%;--bgc:#212529;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:start">
                         <div data-same-height-display-contents style="--jc:start" class="container-62 gp-relative gp-flex gp-flex-col">
-                            <gp-row gp-data='{"background":{"desktop":{"attachment":"scroll","color":"#FFF8F2","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"preload":false,"repeat":"no-repeat","size":"cover","type":"color"},"mobile":{"attachment":"scroll","color":"#FFF8F2","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"preload":false,"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"goJWKk7H21"}' data-id="goJWKk7H21" id="goJWKk7H21" data-same-height-subgrid-container class="goJWKk7H21 gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--pt:25px;--pl:var(--g-s-l);--pb:48px;--pr:var(--g-s-l);--mb-mobile:0px;--pt-mobile:15px;--pl-mobile:20px;--pb-mobile:15px;--pr-mobile:20px;--pt-tablet:25px;--pl-tablet:var(--g-s-l);--pb-tablet:48px;--pr-tablet:var(--g-s-l);--cg:16px;--rg:0px;--gtc:minmax(0, 12fr);--w:1400px;--h:auto;--bgc:#FFF8F2;--bgc-mobile:#FFF8F2;--bgi:url();--bgi-mobile:url();--bgp:50% 50%;--bgp-mobile:50% 50%;--bgs:cover;--bgs-mobile:cover;--bgr:no-repeat;--bgr-mobile:no-repeat;--bga:scroll;--bga-mobile:scroll;--pc:start">
+                            <gp-row gp-data='{"background":{"desktop":{"attachment":"scroll","color":"#FFF8F2","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"preload":false,"repeat":"no-repeat","size":"cover","type":"color"},"mobile":{"attachment":"scroll","color":"#FFF8F2","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"preload":false,"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"goJWKk7H21"}' data-id="goJWKk7H21" id="goJWKk7H21" data-same-height-subgrid-container class="goJWKk7H21 gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--pt:12px;--pl:var(--g-s-l);--pb:20px;--pr:var(--g-s-l);--mb-mobile:0px;--pt-mobile:8px;--pl-mobile:20px;--pb-mobile:12px;--pr-mobile:20px;--pt-tablet:12px;--pl-tablet:var(--g-s-l);--pb-tablet:20px;--pr-tablet:var(--g-s-l);--cg:16px;--rg:0px;--gtc:minmax(0, 12fr);--w:1400px;--h:auto;--bgc:#FFF8F2;--bgc-mobile:#FFF8F2;--bgi:url();--bgi-mobile:url();--bgp:50% 50%;--bgp-mobile:50% 50%;--bgs:cover;--bgs-mobile:cover;--bgr:no-repeat;--bgr-mobile:no-repeat;--bga:scroll;--bga-mobile:scroll;--pc:start">
                                 <div data-same-height-display-contents style="--jc:start" class="container-25 gp-relative gp-flex gp-flex-col">
                                     <gp-row gp-data='{"uid":"gyVS8muSYt"}' data-id="gyVS8muSYt" id="gyVS8muSYt" data-same-height-subgrid-container class="gyVS8muSYt gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:16px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:16px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--mb-tablet:16px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--cg:16px;--rg:0px;--gtc:minmax(0, 12fr);--w:var(--g-ct-w, 1200px);--h:auto;--pc:start">
                                         <div data-same-height-display-contents style="--jc:start" class="gmA6lM5LDs gp-relative gp-flex gp-flex-col">
-                                            <div role="presentation" data-id="text-content-63" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:30px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:10px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--mb-tablet:30px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--ta:center;max-width:125px;margin-left:auto;margin-right:auto;" class="gp-group/image gp-relative force-publish-1761671139886 gp-flex-none gp-h-auto mobile:gp-flex-none mobile:gp-h-auto tablet:gp-flex-none tablet:gp-h-auto text-content-63">
+                                            <div role="presentation" data-id="text-content-63" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:12px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:8px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--mb-tablet:12px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--ta:center;max-width:125px;margin-left:auto;margin-right:auto;" class="gp-group/image gp-relative force-publish-1761671139886 gp-flex-none gp-h-auto mobile:gp-flex-none mobile:gp-h-auto tablet:gp-flex-none tablet:gp-h-auto text-content-63">
                                                 <div style="border-radius:inherit;--jc:center" class="gp-h-full gp-w-full gp-flex pointer-events-auto">
                                                     <picture style="border-radius:inherit" class="gp-contents">
                                                         <!-- <source media="(max-width: 767px)" data-srcSet="logo.png" srcset="logo.png"/> -->
@@ -111,7 +275,7 @@
                                     </gp-row>
                                     <gp-row gp-data='{"uid":"content-row-40"}' data-id="content-row-40" id="content-row-40" data-same-height-subgrid-container class="content-row-40 gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:0px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--pt-mobile:0px;--pl-mobile:20px;--pb-mobile:30px;--pr-mobile:20px;--mb-tablet:0px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--cg:40px;--rg:0px;--gtc:minmax(0, 6fr) minmax(0, 6fr);--gtc-mobile:minmax(0, 12fr);--w:1200px;--h:auto;--pc:start">
                                         <div data-same-height-display-contents style="--jc:center;--o-mobile:1" class="g33N1pzLyL gp-relative gp-flex gp-flex-col">
-                                            <div data-id="gmYM1pO-Ro" class="gmYM1pO-Ro" style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:20px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:20px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--mb-tablet:20px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--dynamic-source-color:#F4F4F4" data-test-force-publish="1761671139893">
+                                            <div data-id="gmYM1pO-Ro" class="gmYM1pO-Ro" style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:10px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:10px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--mb-tablet:10px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--dynamic-source-color:#F4F4F4" data-test-force-publish="1761671139893">
                                                 <div class="gp-flex" style="--jc:left">
                                                     <h2 data-gp-text class=" gp-text-instant gp-text" style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:left;--ta-tablet:left;--ta-mobile:left;--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-heading, heading);--weight:600;--size:24px;--size-tablet:22px;--size-mobile:20px;--lh:130%;--lh-tablet:130%;--lh-mobile:130%;--c:#333333;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl:none">
                                                         <span style="color:#82163F;">Menopause</span>
@@ -127,7 +291,7 @@
                                             
                                             <div gp-el-wrapper class="g9h-7Q0rcu ">
                                                 <div class="gp-flex" style="--jc:left">
-                                                    <div data-id="g9h-7Q0rcu" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:20px;--w:100%;--w-tablet:100%;--w-mobile:100%;--ta:left;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll">
+                                                    <div data-id="g9h-7Q0rcu" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:10px;--w:100%;--w-tablet:100%;--w-mobile:100%;--ta:left;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll">
                                                         <ul class="gp-inline-flex gp-flex-col" style="--gg:12px;--gg-mobile:0px">
                                                             <li data-index="0" data-id="gtXbpEL3n-" class="gp-icon-list-item gp-flex gp-w-full gp-items-center gp-child-item-g9h-7Q0rcu" style="--bgc:transparent;--bgi:transparent;--cg:12px">
                                                                 <div data-same-height-display-contents class="g8qqQaiftX gp-relative gp-flex gp-flex-col">
@@ -238,7 +402,7 @@
                                                         <div style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:16px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--ta:left">
                                                             
                                                             <a class="gp-trigger-button-link gp-hidden" href=#ggAQtkxZKj target=undefined></a>
-                                                            <a data-id="cta-button-4-7" dataId="cta-button-4-7" data-state="idle" aria-label="<p><strong>END YOUR HIP PAIN TODAY</strong></p>" href="https://alorament.com/cart/45733871354017:1" target style="--w:475px;--w-tablet:475px;--w-mobile:475px;--h:auto;--h-tablet:auto;--h-mobile:auto;--pl:10px;--pr:10px;--pt:12px;--pb:12px;--pl-mobile:10px;--pr-mobile:10px;--pt-mobile:12px;--pb-mobile:12px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:2.8284271247461903px 2.82842712474619px 7px 1px rgba(18, 18, 18, 0.2);--bgi:none;--hvr-bgi:none;--hvr-bg:#FFFFFF;--bg:#82163F;--hvr-c:#82163F;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%" class="cta-button-4-7 gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
+                                                            <a data-id="cta-button-4-7" dataId="cta-button-4-7" data-state="idle" aria-label="<p><strong>END YOUR HIP PAIN TODAY</strong></p>" href="https://alorament.com/cart/45733871354017:1" target style="--w:475px;--w-tablet:475px;--w-mobile:475px;--h:auto;--h-tablet:auto;--h-mobile:auto;--pl:10px;--pr:10px;--pt:18px;--pb:18px;--pl-mobile:10px;--pr-mobile:10px;--pt-mobile:18px;--pb-mobile:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:2.8284271247461903px 2.82842712474619px 7px 1px rgba(18, 18, 18, 0.2);--bgi:none;--hvr-bgi:none;--hvr-bg:#FFFFFF;--bg:#82163F;--hvr-c:#82163F;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%" class="cta-button-4-7 gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
                                                                 <div class="gp-inline-flex">
                                                                     <span data-gp-text style="--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%;--ts:none;word-break:break-word" class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
                                                                         <p>
@@ -462,7 +626,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <gp-row gp-data='{"background":{"desktop":{"attachment":"scroll","color":"#DFE8DB","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"preload":false,"repeat":"no-repeat","size":"cover","type":"color"},"mobile":{"color":"#DFE8DB","preload":false,"type":"color"}},"uid":"guCnZGx1ms"}' data-id="guCnZGx1ms" id="guCnZGx1ms" data-same-height-subgrid-container class="guCnZGx1ms gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--bblr-mobile:8px;--bbrr-mobile:8px;--btlr-mobile:8px;--btrr-mobile:8px;--mb:16px;--pt:var(--g-s-l);--pl:var(--g-s-l);--pb:var(--g-s-l);--pr:var(--g-s-l);--cg:16px;--rg:0px;--gtc:minmax(0, 12fr);--w:var(--g-ct-w, 1200px);--h:auto;--bgc:#DFE8DB;--bgc-mobile:#DFE8DB;--bgi:url();--bgi-mobile:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:start">
+                                            <gp-row gp-data='{"background":{"desktop":{"attachment":"scroll","color":"#DFE8DB","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"preload":false,"repeat":"no-repeat","size":"cover","type":"color"},"mobile":{"color":"#DFE8DB","preload":false,"type":"color"}},"uid":"guCnZGx1ms"}' data-id="guCnZGx1ms" id="guCnZGx1ms" data-same-height-subgrid-container class="guCnZGx1ms gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--bblr-mobile:8px;--bbrr-mobile:8px;--btlr-mobile:8px;--btrr-mobile:8px;--mb:4px;--pt:var(--g-s-l);--pl:var(--g-s-l);--pb:var(--g-s-l);--pr:var(--g-s-l);--cg:16px;--rg:0px;--gtc:minmax(0, 12fr);--w:var(--g-ct-w, 1200px);--h:auto;--bgc:#DFE8DB;--bgc-mobile:#DFE8DB;--bgi:url();--bgi-mobile:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:start">
                                                 <div data-same-height-display-contents style="--jc:start" class="g_8l2gm-sS gp-relative gp-flex gp-flex-col">
                                                     <div gp-el-wrapper class="text-content-85 ">
                                                         <gp-icon-list uid="text-content-85" data-id="text-content-85" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:flex;--d-mobile:flex;--d-tablet:flex;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:0px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:0px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--mb-tablet:0px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--jc:left" className="text-content-85" gp-data='{"position":{"desktop":"baseline","mobile":"baseline","tablet":"center"},"iconWidth":{"desktop":24}}'>
@@ -523,7 +687,7 @@
                                                     </div>
                                                 </div>
                                             </gp-row>
-                                            <div data-id="text-content-14" class="text-content-14" style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:5px;--mb-mobile:0px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--dynamic-source-color:#F4F4F4" data-test-force-publish="1761671135363">
+                                            <div data-id="text-content-14" class="text-content-14" style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:0px;--mb-mobile:0px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--dynamic-source-color:#F4F4F4" data-test-force-publish="1761671135363">
                                                 <div class="gp-flex" style="--jc:left">
                                                     <div data-gp-text class=" gp-text-instant gp-text" style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:left;--ta-mobile:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:150%;--lh-tablet:180%;--lh-mobile:150%;--c:#151515;--tt:none;word-break:break-word;--bgc:transparent;--bgc-mobile:transparent;--bgi:url();--bgi-mobile:url();--bgp:50% 50%;--bgp-mobile:50% 50%;--bgs:cover;--bgs-mobile:cover;--bgr:no-repeat;--bgr-mobile:no-repeat;--bga:scroll;--bga-mobile:scroll;overflow:hidden;--tdl:none">
                                                         <p>And you're absolutely allowed to do something about it.</p>
@@ -549,13 +713,13 @@
                                     </gp-row>
                                 </div>
                             </gp-row>
-                            <div data-id="text-content-57" class="text-content-57" style="--ta:center;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:36px;--pt:24px;--pl:24px;--pb:24px;--pr:24px;--mb-mobile:16px;--pt-mobile:24px;--pl-mobile:24px;--pb-mobile:24px;--pr-mobile:24px;--mb-tablet:36px;--pt-tablet:24px;--pl-tablet:24px;--pb-tablet:24px;--pr-tablet:24px;--dynamic-source-color:#F4F4F4" data-test-force-publish="1761671135370">
+                            <div data-id="text-content-57" class="text-content-57" style="--ta:center;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:4px;--pt:0px;--pl:24px;--pb:12px;--pr:24px;--mb-mobile:4px;--pt-mobile:0px;--pl-mobile:24px;--pb-mobile:12px;--pr-mobile:24px;--mb-tablet:4px;--pt-tablet:0px;--pl-tablet:24px;--pb-tablet:12px;--pr-tablet:24px;--dynamic-source-color:#F4F4F4;" data-test-force-publish="1761671135370">
                                         <div class="gp-flex" style="--jc:center">
                                             <h2 data-gp-text class=" gp-text-instant gp-text" style="--w:80%;--w-tablet:80%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:center;--ta-tablet:center;--ta-mobile:left;--ff:var(--g-font-Merriweather, 'Merriweather'), var(--g-font-heading, heading);--weight:800;--size:40px;--size-tablet:28px;--size-mobile:29px;--lh:120%;--lh-tablet:130%;--lh-mobile:130%;--c:#151515;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--tdl:none">The Real Problem Isn't Your Age. It's The Missing Bulding Blocks.
         </h2>
                                         </div>
                                     </div>
-                                    <gp-row gp-data='{"uid":"content-row-44"}' data-id="content-row-44" id="content-row-44" data-same-height-subgrid-container class="content-row-44 gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:0px;--pt:24px;--pl:24px;--pb:24px;--pr:24px;--mb-mobile:0px;--pt-mobile:24px;--pl-mobile:24px;--pb-mobile:24px;--pr-mobile:24px;--mb-tablet:0px;--pt-tablet:24px;--pl-tablet:24px;--pb-tablet:24px;--pr-tablet:24px;--cg:40px;--cg-tablet:40px;--cg-mobile:24px;--rg:0px;--rg-tablet:40px;--rg-mobile:24px;--gtc:minmax(0, 6fr) minmax(0, 6fr);--gtc-mobile:minmax(0, 12fr);--w:1200px;--h:auto;--pc:start">
+                                    <gp-row gp-data='{"uid":"content-row-44"}' data-id="content-row-44" id="content-row-44" data-same-height-subgrid-container class="content-row-44 gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:0px;--pt:12px;--pl:24px;--pb:12px;--pr:24px;--mb-mobile:0px;--pt-mobile:12px;--pl-mobile:24px;--pb-mobile:12px;--pr-mobile:24px;--mb-tablet:0px;--pt-tablet:12px;--pl-tablet:24px;--pb-tablet:12px;--pr-tablet:24px;--cg:40px;--cg-tablet:40px;--cg-mobile:24px;--rg:0px;--rg-tablet:40px;--rg-mobile:24px;--gtc:minmax(0, 6fr) minmax(0, 6fr);--gtc-mobile:minmax(0, 12fr);--w:1200px;--h:auto;--pc:start">
                                         <div data-same-height-display-contents style="--jc:center;--o:0;--o-mobile:1" class="g9BIbnuCad gp-relative gp-flex gp-flex-col">
                                             <div data-id="gepwWvGY45" class="gepwWvGY45" style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:16px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:16px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--mb-tablet:16px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--dynamic-source-color:#F4F4F4" data-test-force-publish="1761671135381">
                                                 <div class="gp-flex" style="--jc:left">
@@ -1611,7 +1775,7 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
                                                         <div style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:32px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:16px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--ta:left">
                                                             
                                                             <a class="gp-trigger-button-link gp-hidden" href=#ggAQtkxZKj target=undefined></a>
-                                                            <a data-id="cta-button-1" dataId="cta-button-1" data-state="idle" aria-label="<p><strong>EXPERIENCE HALSTEN TODAY</strong></p>" href="https://alorament.com/cart/45733871354017:1" target style="--w:475px;--w-tablet:475px;--w-mobile:475px;--h:auto;--h-tablet:auto;--h-mobile:auto;--pl:10px;--pr:10px;--pt:12px;--pb:12px;--pl-mobile:10px;--pr-mobile:10px;--pt-mobile:12px;--pb-mobile:12px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:2.8284271247461903px 2.82842712474619px 7px 1px rgba(18, 18, 18, 0.2);--bgi:none;--hvr-bgi:none;--hvr-bg:#FFFFFF;--bg:#82163F;--hvr-c:#82163F;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:800;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%" class="cta-button-1 gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
+                                                            <a data-id="cta-button-1" dataId="cta-button-1" data-state="idle" aria-label="<p><strong>EXPERIENCE HALSTEN TODAY</strong></p>" href="https://alorament.com/cart/45733871354017:1" target style="--w:475px;--w-tablet:475px;--w-mobile:475px;--h:auto;--h-tablet:auto;--h-mobile:auto;--pl:10px;--pr:10px;--pt:18px;--pb:18px;--pl-mobile:10px;--pr-mobile:10px;--pt-mobile:18px;--pb-mobile:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:2.8284271247461903px 2.82842712474619px 7px 1px rgba(18, 18, 18, 0.2);--bgi:none;--hvr-bgi:none;--hvr-bg:#FFFFFF;--bg:#82163F;--hvr-c:#82163F;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:800;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%" class="cta-button-1 gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
                                                                 <div class="gp-inline-flex">
                                                                     <span data-gp-text style="--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:800;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%;--ts:none;word-break:break-word" class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
                                                                         <p>
@@ -2939,7 +3103,7 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
                                                 }
                                             </style>
                                             <a class="gp-trigger-button-link gp-hidden" href=#ggAQtkxZKj target=undefined></a>
-                                            <a data-id="gmMPVv5lvJ" dataId="gmMPVv5lvJ" data-state="idle" aria-label="<p>START YOUR JOURNEY NOW</p>" href="#ggAQtkxZKj" target style="--w:475px;--w-tablet:475px;--w-mobile:475px;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:10px;--pr:10px;--pt:15px;--pb:15px;--pl-mobile:10px;--pr-mobile:10px;--pt-mobile:15px;--pb-mobile:15px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:2.8284271247461903px 2.82842712474619px 7px 1px rgba(18, 18, 18, 0.2);--bgi:none;--hvr-bgi:none;--hvr-bg:#FFFFFF;--bg:#82163F;--hvr-c:#82163F;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:800;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:180%;--lh-tablet:180%;--lh-mobile:180%" class="gmMPVv5lvJ gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
+                                            <a data-id="gmMPVv5lvJ" dataId="gmMPVv5lvJ" data-state="idle" aria-label="<p>START YOUR JOURNEY NOW</p>" href="#ggAQtkxZKj" target style="--w:475px;--w-tablet:475px;--w-mobile:475px;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:10px;--pr:10px;--pt:22.5px;--pb:22.5px;--pl-mobile:10px;--pr-mobile:10px;--pt-mobile:22.5px;--pb-mobile:22.5px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:2.8284271247461903px 2.82842712474619px 7px 1px rgba(18, 18, 18, 0.2);--bgi:none;--hvr-bgi:none;--hvr-bg:#FFFFFF;--bg:#82163F;--hvr-c:#82163F;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:800;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:180%;--lh-tablet:180%;--lh-mobile:180%" class="gmMPVv5lvJ gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
                                                 <div class="gp-inline-flex">
                                                     <span data-gp-text style="--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:800;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:180%;--lh-tablet:180%;--lh-mobile:180%;--ts:none;word-break:break-word" class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
                                                         <p>START YOUR JOURNEY NOW</p>
@@ -3554,7 +3718,7 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
                                                         <div style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:24px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:16px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--ta:left">
                                                             
                                                             <a class="gp-trigger-button-link gp-hidden" href=#ggAQtkxZKj target=undefined></a>
-                                                            <a data-id="cta-button-2" dataId="cta-button-2" data-state="idle" aria-label="<p><strong>CLAIM YOUR 50% OFF</strong></p>" href="https://alorament.com/cart/45733871354017:1" target style="--w:475px;--w-tablet:475px;--w-mobile:475px;--h:auto;--h-tablet:auto;--h-mobile:auto;--pl:10px;--pr:10px;--pt:12px;--pb:12px;--pl-mobile:10px;--pr-mobile:10px;--pt-mobile:12px;--pb-mobile:12px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:2.8284271247461903px 2.82842712474619px 7px 1px rgba(18, 18, 18, 0.2);--bgi:none;--hvr-bgi:none;--hvr-bg:#FFFFFF;--bg:#82163F;--hvr-c:#82163F;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%" class="cta-button-2 gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
+                                                            <a data-id="cta-button-2" dataId="cta-button-2" data-state="idle" aria-label="<p><strong>CLAIM YOUR 50% OFF</strong></p>" href="https://alorament.com/cart/45733871354017:1" target style="--w:475px;--w-tablet:475px;--w-mobile:475px;--h:auto;--h-tablet:auto;--h-mobile:auto;--pl:10px;--pr:10px;--pt:18px;--pb:18px;--pl-mobile:10px;--pr-mobile:10px;--pt-mobile:18px;--pb-mobile:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:2.8284271247461903px 2.82842712474619px 7px 1px rgba(18, 18, 18, 0.2);--bgi:none;--hvr-bgi:none;--hvr-bg:#FFFFFF;--bg:#82163F;--hvr-c:#82163F;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%" class="cta-button-2 gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
                                                                 <div class="gp-inline-flex">
                                                                     <span data-gp-text style="--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%;--ts:none;word-break:break-word" class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
                                                                         <p>
@@ -4530,7 +4694,7 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
                                                                         <gp-button gp-data='{"btnLink":{"link":"/cart/50797562495192:1","type":"open-page"}}' class="gp-flex gp-flex-col">
                                                                             <div style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:3px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:8px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--mb-tablet:3px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--ta:left">
                                                                                 
-                                                                                <a data-id="cta-button-3" dataId="cta-button-3" data-state="idle" aria-label="<p><strong>GET YOURS 50% OFF</strong></p>" href="https://alorament.com/cart/45733871354017:1" target style="--w:475px;--w-tablet:475px;--w-mobile:475px;--h:auto;--h-tablet:auto;--h-mobile:auto;--pl:10px;--pr:10px;--pt:12px;--pb:12px;--pl-mobile:10px;--pr-mobile:10px;--pt-mobile:12px;--pb-mobile:12px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:2.8284271247461903px 2.82842712474619px 7px 1px rgba(18, 18, 18, 0.2);--bgi:none;--hvr-bgi:none;--hvr-bg:#FFFFFF;--bg:#82163F;--hvr-c:#82163F;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%" class="cta-button-3 gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
+                                                                                <a data-id="cta-button-3" dataId="cta-button-3" data-state="idle" aria-label="<p><strong>GET YOURS 50% OFF</strong></p>" href="https://alorament.com/cart/45733871354017:1" target style="--w:475px;--w-tablet:475px;--w-mobile:475px;--h:auto;--h-tablet:auto;--h-mobile:auto;--pl:10px;--pr:10px;--pt:18px;--pb:18px;--pl-mobile:10px;--pr-mobile:10px;--pt-mobile:18px;--pb-mobile:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:2.8284271247461903px 2.82842712474619px 7px 1px rgba(18, 18, 18, 0.2);--bgi:none;--hvr-bgi:none;--hvr-bg:#FFFFFF;--bg:#82163F;--hvr-c:#82163F;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%" class="cta-button-3 gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
                                                                                     <div class="gp-inline-flex">
                                                                                         <span data-gp-text style="--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%;--ts:none;word-break:break-word" class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
                                                                                             <p>
@@ -5207,7 +5371,7 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
                                                             <div style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:3px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:8px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--mb-tablet:3px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--ta:center">
                                                                 
                                                                 <a class="gp-trigger-button-link gp-hidden" href=#ggAQtkxZKj target=undefined></a>
-                                                                <a data-id="gxoB_8TqH5" dataId="gxoB_8TqH5" data-state="idle" aria-label="<p><strong>CLAIM YOUR 50% OFF</strong></p>" href="https://alorament.com/cart/45733871354017:1" target style="--w:475px;--w-tablet:475px;--w-mobile:475px;--h:auto;--h-tablet:auto;--h-mobile:auto;--pl:10px;--pr:10px;--pt:12px;--pb:12px;--pl-mobile:10px;--pr-mobile:10px;--pt-mobile:12px;--pb-mobile:12px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:2.8284271247461903px 2.82842712474619px 7px 1px rgba(18, 18, 18, 0.2);--bgi:none;--hvr-bgi:none;--hvr-bg:#FFFFFF;--bg:#82163F;--hvr-c:#82163F;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%" class="gxoB_8TqH5 gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
+                                                                <a data-id="gxoB_8TqH5" dataId="gxoB_8TqH5" data-state="idle" aria-label="<p><strong>CLAIM YOUR 50% OFF</strong></p>" href="https://alorament.com/cart/45733871354017:1" target style="--w:475px;--w-tablet:475px;--w-mobile:475px;--h:auto;--h-tablet:auto;--h-mobile:auto;--pl:10px;--pr:10px;--pt:18px;--pb:18px;--pl-mobile:10px;--pr-mobile:10px;--pt-mobile:18px;--pb-mobile:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:2.8284271247461903px 2.82842712474619px 7px 1px rgba(18, 18, 18, 0.2);--bgi:none;--hvr-bgi:none;--hvr-bg:#FFFFFF;--bg:#82163F;--hvr-c:#82163F;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%" class="gxoB_8TqH5 gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
                                                                     <div class="gp-inline-flex">
                                                                         <span data-gp-text style="--ff:var(--g-font-Rubik, 'Rubik'), var(--g-font-body, body);--weight:400;--size:24px;--size-tablet:16px;--size-mobile:19px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%;--ts:none;word-break:break-word" class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
                                                                             <p>
@@ -5271,5 +5435,65 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
         <script src='https://assets.gemcommerce.com/assets-v2/gp-product-v7-5.js?v=1756938901162' defer></script>
         <script src='https://assets.gemcommerce.com/assets-v2/gp-sticky-v7-5.js?v=1756938901162' defer></script>
         <script src="/sale1/script.js"></script>
+    <script>
+        // Force reduce spacing between "And you're absolutely allowed" and "The Real Problem"
+        document.addEventListener('DOMContentLoaded', function() {
+            // Target text-content-14
+            const text14 = document.querySelector('[data-id="text-content-14"]');
+            if (text14) {
+                text14.style.marginBottom = '0px';
+                text14.style.paddingBottom = '0px';
+            }
+            
+            // Target text-content-57
+            const text57 = document.querySelector('[data-id="text-content-57"]');
+            if (text57) {
+                text57.style.marginTop = '0px';
+                text57.style.paddingTop = '0px';
+                text57.style.marginBottom = '4px';
+            }
+            
+            // Target the gp-row containing text-content-14
+            const rowGuCn = document.querySelector('[data-id="guCnZGx1ms"]');
+            if (rowGuCn) {
+                rowGuCn.style.marginBottom = '4px';
+            }
+            
+            // Target the parent row
+            const parentRow = document.querySelector('[data-id="goJWKk7H21"]');
+            if (parentRow) {
+                const children = parentRow.children;
+                if (children.length > 0) {
+                    const lastChild = children[children.length - 1];
+                    if (lastChild && lastChild.querySelector('[data-id="text-content-57"]')) {
+                        lastChild.style.marginTop = '0px';
+                        lastChild.style.paddingTop = '0px';
+                    }
+                }
+            }
+            
+            // Find any element between text-content-14 and text-content-57 and reduce its margin
+            const allElements = document.querySelectorAll('*');
+            let foundText14 = false;
+            for (let el of allElements) {
+                if (el.getAttribute('data-id') === 'text-content-14') {
+                    foundText14 = true;
+                }
+                if (foundText14 && el.getAttribute('data-id') === 'text-content-57') {
+                    break;
+                }
+                if (foundText14) {
+                    const mb = window.getComputedStyle(el).marginBottom;
+                    const mt = window.getComputedStyle(el).marginTop;
+                    const pt = window.getComputedStyle(el).paddingTop;
+                    if (parseInt(mb) > 10 || parseInt(mt) > 10 || parseInt(pt) > 10) {
+                        el.style.marginTop = '0px';
+                        el.style.marginBottom = '0px';
+                        el.style.paddingTop = '0px';
+                    }
+                }
+            }
+        });
+    </script>
     </body>
 </html>
