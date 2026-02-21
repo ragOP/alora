@@ -12,7 +12,11 @@
 
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
   body {
     background: #fff;
@@ -21,6 +25,8 @@
     font-size: 17px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   /* ── STICKY UPDATE BAR ── */
@@ -40,6 +46,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
+    flex-wrap: wrap;
   }
   .update-bar-label {
     font-size: 16px;
@@ -55,7 +62,8 @@
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
   .update-bar-flag {
     width: 40px;
@@ -72,6 +80,23 @@
     .update-bar-label,
     .update-bar-trending { font-size: 13px; }
     .update-bar-flag { width: 30px; }
+  }
+  @media (max-width: 520px) {
+    .update-bar {
+      padding: 12px 14px;
+    }
+    .update-bar-inner {
+      justify-content: center;
+      gap: 8px;
+    }
+    .update-bar-label {
+      display: none;
+    }
+    .update-bar-trending {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   /* ── HEADER ── */
@@ -426,6 +451,7 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-align: left;
+    overflow-wrap: anywhere;
   }
   .compare-table th:first-child { background: #f5f5f5; color: #666; }
   .compare-table th.th-bad { background: #c0392b; color: white; }
@@ -435,6 +461,7 @@
     border-bottom: 1px solid #eee;
     vertical-align: top;
     line-height: 1.5;
+    overflow-wrap: anywhere;
   }
   .compare-table tr:last-child td { border-bottom: none; }
   .compare-table td:first-child { font-weight: 700; color: #111; background: #fafafa; width: 28%; }
