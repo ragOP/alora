@@ -968,7 +968,7 @@
     <span class="stars-label">4.9 / 5 — 2,847 customer ratings</span>
   </div>
 
-  <p>There is a version of you from five years ago who would not recognise what you now plan your day around. </p>
+  <p><strong>There is a version of you from five years ago</strong> who would not recognise what you now plan your day around. </p>
     
     
     <p>The stairs. The side of the bed you can no longer sleep on. The walks you've quietly shortened. The mornings where the first thing you feel, before you even open your eyes — is that deep, burning ache in your hip, already there, already waiting.</p>
@@ -1071,12 +1071,13 @@
   <p>When we finally tested the triple-wavelength protocol, one participant — Anna, 65, who was six weeks from surgery — called our clinic at 6am after her second week of treatment. <em>"I woke up on my left side. My bad side. I've been trying to sleep on it for two years. It didn't hurt."</em></p>
   <p>By week eight, ten of our twelve trial participants had cancelled or postponed their scheduled surgeries.</p>
 
-  <div class="section-q">What are MADs? And how is Alorament Flex different?</div>
+  <div class="section-q">What makes Alorament Flex different from everything else you've tried?</div>
 
-  <p>We're not talking about MADs here — this is a different mechanism entirely. But the parallel is useful: just as MADs address snoring at the root cause (jaw position), Alorament Flex addresses gluteal tendinopathy at the root cause — <strong>cellular energy deficit in the tendon itself.</strong></p>
-  <p>The difference is that no one had built a device that could actually reach the gluteal tendons through 2cm of tissue — until now.</p>
+  <p>Every treatment you've tried — the injections, the physio, the supplements — was working on the wrong target. They were addressing symptoms at the surface while the actual problem sat 2 centimetres deeper, unreachable.</p>
+  <p>Alorament Flex was built for exactly that depth. Not adapted from another device. Not repurposed from general red light therapy. Engineered specifically for the anatomical location of the gluteal tendon in a post-menopausal body — because that body has a specific deficit that no existing device was designed to address.</p>
+  <p>That is the only difference that matters. Everything else reached the skin. This reaches the tendon.</p>
 
-  <div class="section-q">What is Alorament Flex?</div>
+  <div class="section-q">What is Alorament Flex? Exactly</div>
 
   <div class="img-wrap">
     <img src="/v3/2.png" alt="Woman wearing Alorament Flex with close-up on hip area" class="content-img" loading="lazy" decoding="async" fetchpriority="low">
@@ -1118,7 +1119,7 @@
 
   <p>This is not red light therapy in the general sense. This is a precisely calibrated sequence designed specifically for the anatomical depth and biological needs of post-menopausal gluteal tendon tissue. <strong>No other device on the market was built to reach this depth. No other device was designed for this condition.</strong></p>
 
-  <div class="section-q">Does it actually work? What does the data show?</div>
+  <div class="section-q" id="trigger-line">Does it actually work? What does the data show?</div>
 
   <p>From our 12-week independent clinical trial — 127 women, ages 45–65:</p>
 
@@ -1414,12 +1415,27 @@
     stickyBarLink.href = ctaUrl.toString();
   }
 
-  // STICKY BAR — show on scroll
+  // STICKY BAR — show ONLY when trigger line comes into view
   const stickyBar = document.getElementById('stickyBar');
-  if (stickyBar) {
-    window.addEventListener('scroll', function() {
-      stickyBar.classList.toggle('show', window.scrollY > 500);
-    }, { passive: true });
+  const triggerLine = document.getElementById('trigger-line');
+  if (stickyBar && triggerLine) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const rect = entry.boundingClientRect;
+        // Show CTA if line is visible OR has been scrolled past
+        if (entry.isIntersecting || rect.top < 0) {
+          stickyBar.classList.add('show');
+        } else {
+          // Line is above viewport (user hasn't reached it) - hide CTA
+          stickyBar.classList.remove('show');
+        }
+      });
+    }, {
+      threshold: 0, // Trigger as soon as any part is visible
+      rootMargin: '0px'
+    });
+    
+    observer.observe(triggerLine);
   }
 
   // DATE
