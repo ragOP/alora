@@ -10,6 +10,26 @@
 <link rel="preconnect" href="https://flagcdn.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script>
+  !function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+  ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias",
+  "group","enableCookie","disableCookie"];
+  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+  for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+  ttq.instance=function(t){for(var
+  e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+  ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
+  ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new
+  Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};
+  var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+
+  e+"&lib="+t;
+  var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+  ttq.load('CRTG093C77U61CV1HG20');
+  ttq.page();
+  ttq.track('ViewContent');
+  }(window, document, 'ttq');
+  </script>
+<script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -1425,15 +1445,19 @@
     btn.href = ctaUrl.toString();
   });
 
-  // Meta Pixel AddToCart tracking on reveal CTA buttons
+  // Meta Pixel + TikTok ClickButton tracking on reveal CTA buttons
   document.querySelectorAll('.cta-btn').forEach(btn => {
     btn.addEventListener('click', function() {
-      if (typeof fbq !== 'function') return;
-      fbq('track', 'AddToCart', {
-        content_name: 'Alorament Flex',
-        content_ids: ['alorament-flex'],
-        content_type: 'product'
-      });
+      if (typeof fbq === 'function') {
+        fbq('track', 'AddToCart', {
+          content_name: 'Alorament Flex',
+          content_ids: ['alorament-flex'],
+          content_type: 'product'
+        });
+      }
+      if (typeof ttq !== 'undefined' && typeof ttq.track === 'function') {
+        ttq.track('ClickButton');
+      }
     });
   });
   
