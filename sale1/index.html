@@ -15,6 +15,26 @@
 </title>
      
 <script>
+    !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+    ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias",
+    "group","enableCookie","disableCookie"];
+    ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+    for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+    ttq.instance=function(t){for(var
+    e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+    ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
+    ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new
+    Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};
+    var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+
+    e+"&lib="+t;
+    var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+    ttq.load('CRTG093C77U61CV1HG20');
+    ttq.page();
+    ttq.track('ViewContent');
+    }(window, document, 'ttq');
+    </script>
+<script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -5593,17 +5613,30 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
         // Fire InitiateCheckout when user clicks any buy button
         document.querySelectorAll('a.gp-button-base[href*="alorament.com/cart/"]').forEach(function(button) {
             button.addEventListener('click', function() {
-                fbq('track', 'InitiateCheckout');
+                if (typeof fbq === 'function') {
+                    fbq('track', 'InitiateCheckout');
+                }
+                if (typeof ttq !== 'undefined' && typeof ttq.track === 'function') {
+                    ttq.track('InitiateCheckout');
+                }
             });
         });
-        // Pass fbclid from URL to Shopify checkout link (keeps FB attribution)
+
+        // Pass click IDs from URL to checkout/cart links (keeps attribution)
         const params = new URLSearchParams(window.location.search);
         const fbclid = params.get('fbclid');
-        if (fbclid) {
+        const ttclid = params.get('ttclid');
+
+        if (fbclid || ttclid) {
             document.querySelectorAll('a[href*="alorament.com"], a[href*="checkout"]')
                 .forEach(function(link) {
-                    const url = new URL(link.href);
-                    url.searchParams.set('fbclid', fbclid);
+                    const url = new URL(link.href, window.location.origin);
+                    if (fbclid) {
+                        url.searchParams.set('fbclid', fbclid);
+                    }
+                    if (ttclid) {
+                        url.searchParams.set('ttclid', ttclid);
+                    }
                     link.href = url.toString();
                 });
         }
