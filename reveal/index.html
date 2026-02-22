@@ -1338,7 +1338,7 @@
   </div> -->
 
   <!-- FINAL CTA -->
-  <div class="cta-block">
+  <div class="cta-block" id="final-cta">
     <h2>Get Your Alorament Flex<br>— 50% Off Now</h2>
     <p class="sub">Stock is limited due to precision manufacturing. When this batch sells out, the next shipment is at full price.</p>
     <div class="cta-price">
@@ -1386,7 +1386,7 @@
   </div>
 
   <br>
-  <a href="https://blog.alorament.com/sale1" class="cta-btn" style="background:#e02020; color:white; display:block; text-align:center; padding:22px 34px; border-radius:6px; font-size:16px; font-weight:800; text-transform:uppercase; text-decoration:none; letter-spacing:0.02em;">→ Claim My Alorament Flex — 50% Off Now</a>
+  <a href="#final-cta" class="cta-btn footer-scroll-cta" style="background:#e02020; color:white; display:block; text-align:center; padding:22px 34px; border-radius:6px; font-size:16px; font-weight:800; text-transform:uppercase; text-decoration:none; letter-spacing:0.02em;">→ Claim My Alorament Flex — 50% Off Now</a>
 
   <div class="footer">
     <p>ADVERTORIAL — This is a sponsored health report. The experiences described are individual results and may not be representative of all users. The information in this report is for educational purposes and does not constitute medical advice. Consult your physician if you have concerns about your health. Results may vary. These statements have not been evaluated by a regulatory authority. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
@@ -1441,20 +1441,13 @@
   const params = new URLSearchParams(window.location.search);
   const ctaUrl = new URL(CTA_URL);
   params.forEach((value, key) => ctaUrl.searchParams.set(key, value));
-  document.querySelectorAll('a.cta-btn, a[href="#"], a[href="#cta"]').forEach(btn => {
+  document.querySelectorAll('a.cta-btn:not(.footer-scroll-cta), a[href="#"], a[href="#cta"]').forEach(btn => {
     btn.href = ctaUrl.toString();
   });
 
-  // Meta Pixel + TikTok ClickButton tracking on reveal CTA buttons
+  // CTA click tracking on reveal page (.cta-btn is the actual CTA class)
   document.querySelectorAll('.cta-btn').forEach(btn => {
     btn.addEventListener('click', function() {
-      if (typeof fbq === 'function') {
-        fbq('track', 'AddToCart', {
-          content_name: 'Alorament Flex',
-          content_ids: ['alorament-flex'],
-          content_type: 'product'
-        });
-      }
       if (typeof ttq !== 'undefined' && typeof ttq.track === 'function') {
         ttq.track('ClickButton');
       }
