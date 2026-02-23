@@ -5590,6 +5590,16 @@ Week 5, I woke up naturally at 6 AM – on my side, completely comfortable. I ju
         <script src='https://assets.gemcommerce.com/assets-v2/gp-sticky-v7-5.js?v=1756938901162' defer></script>
         <script src="/sale1/script.js"></script>
     <script>
+        // Unmute reveal videos (1.mp4, 2.mp4, 3.mp4) when user clicks play
+        document.addEventListener('click', function(e) {
+            const embed = e.target.closest('gp-lite-html5-embed');
+            if (!embed) return;
+            const video = embed.querySelector('video[data-src*="blog.alorament.com/reveal"], video[src*="blog.alorament.com/reveal"]');
+            if (!video) return;
+            video.muted = false;
+            video.controls = true;
+        }, true);
+
         // Fire InitiateCheckout when user clicks any buy button
         document.querySelectorAll('a.gp-button-base[href*="alorament.com/cart/"]').forEach(function(button) {
             button.addEventListener('click', function() {

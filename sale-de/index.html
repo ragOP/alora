@@ -5526,5 +5526,15 @@
             }
         }
     });
+
+        // Unmute reveal videos (1.mp4, 2.mp4, 3.mp4) when user clicks play
+        document.addEventListener('click', function(e) {
+            const embed = e.target.closest('gp-lite-html5-embed');
+            if (!embed) return;
+            const video = embed.querySelector('video[data-src*="blog.alorament.com/reveal"], video[src*="blog.alorament.com/reveal"]');
+            if (!video) return;
+            video.muted = false;
+            video.controls = true;
+        }, true);
 </script>
 </body></html>
