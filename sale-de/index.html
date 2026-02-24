@@ -10,7 +10,7 @@
         <link rel="preload" href="./gempages_556819636071433409-1157d9f5-6314-4e25-9025-bb684fb0680b.webp" as="image">
         <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
         <link rel="preconnect" href="https://analytics.tiktok.com" crossorigin>
-        <title>aloramenA Stride - Hol dir dein Leben von der Glutealtendinopathie zurück
+        <title>aloramennt Stride - Hol dir dein Leben von der Glutealtendinopathie zurück
 </title>
         <link rel="dns-prefetch" href="https://alorament.com/cart/45733871354017:1">
         <link rel="dns-prefetch" href="https://alorament.com/cart/45733871354017:1">
@@ -5478,6 +5478,33 @@
 <script src='https://assets.gemcommerce.com/assets-v2/gp-sticky-v7-5.js?v=1756938901162' defer></script>
 <script src="/sale1/script.js"></script>
 <script>
+    // Resolve relative video URLs to absolute so videos play on live (step videos + testimonial videos)
+    document.addEventListener('DOMContentLoaded', function() {
+        var docUrl = window.location.href;
+        function resolve(url) {
+            if (!url || url.indexOf('data:') === 0 || url.indexOf('http') === 0) return url;
+            try { return new URL(url, docUrl).href; } catch (e) { return url; }
+        }
+        document.querySelectorAll('video[data-src]').forEach(function(v) {
+            var url = v.getAttribute('data-src');
+            if (url) {
+                url = resolve(url);
+                v.setAttribute('data-src', url);
+                v.src = url;
+            }
+            v.querySelectorAll('source[data-src], source[src]').forEach(function(s) {
+                var u = s.getAttribute('data-src') || s.getAttribute('src');
+                if (u) { u = resolve(u); s.setAttribute('data-src', u); s.setAttribute('src', u); }
+            });
+            var firstSource = v.querySelector('source[src]');
+            if (firstSource && firstSource.getAttribute('src') && !v.getAttribute('src')) v.src = resolve(firstSource.getAttribute('src'));
+        });
+        document.querySelectorAll('video source[src]').forEach(function(s) {
+            var u = s.getAttribute('src');
+            if (u) { u = resolve(u); s.setAttribute('src', u); }
+        });
+    });
+
     // Force reduce spacing between "And you're absolutely allowed" and "The Real Problem" - 50% closer
     document.addEventListener('DOMContentLoaded', function() {
         // Target text-content-14 - use negative margin to pull closer
