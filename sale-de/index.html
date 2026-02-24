@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="/sale-de/style.css">
         <meta name="theme-color" content="">
         <link rel="preload" href="/sale-de/gempages_556819636071433409-1157d9f5-6314-4e25-9025-bb684fb0680b.webp" as="image">
+        <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+        <link rel="preconnect" href="https://analytics.tiktok.com" crossorigin>
         <title>Halsten Stride - Hol dir dein Leben von der Glutealtendinopathie zurück
 </title>
         <link rel="dns-prefetch" href="https://alorament.com/cart/45733871354017:1">
@@ -5541,5 +5543,51 @@
             video.muted = false;
             video.controls = true;
         }, true);
-</script>
+
+        // Fire InitiateCheckout when user clicks any buy/cart button
+        document.querySelectorAll('a.gp-button-base[href*="alorament.com/cart/"], a[href*="alorament.com/cart/"]').forEach(function(button) {
+            button.addEventListener('click', function() {
+                if (typeof fbq === 'function') {
+                    fbq('track', 'InitiateCheckout');
+                }
+                if (typeof ttq !== 'undefined' && typeof ttq.track === 'function') {
+                    ttq.track('InitiateCheckout');
+                }
+            });
+        });
+
+        // Pass click IDs from URL to checkout/cart links (keeps attribution)
+        var params = new URLSearchParams(window.location.search);
+        var fbclid = params.get('fbclid');
+        var ttclid = params.get('ttclid');
+        if (fbclid || ttclid) {
+            document.querySelectorAll('a[href*="alorament.com"], a[href*="checkout"]').forEach(function(link) {
+                try {
+                    var url = new URL(link.href, window.location.origin);
+                    if (fbclid) url.searchParams.set('fbclid', fbclid);
+                    if (ttclid) url.searchParams.set('ttclid', ttclid);
+                    link.href = url.toString();
+                } catch (e) {}
+            });
+        }
+    </script>
+    <script>
+      (function(){
+        var analyticsLoaded=false;
+        function loadAnalytics(){
+          if(analyticsLoaded)return;analyticsLoaded=true;
+          function loadTikTok(){!function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript";o.async=!0;o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};ttq.load('CRTG093C77U61CV1HG20');ttq.page();ttq.track('ViewContent');}(window,document,'ttq');}
+          function loadFbq(){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1686948372258756');fbq('track','PageView');fbq('track','ViewContent');}
+          loadTikTok();loadFbq();
+        }
+        function schedule(){
+          ['scroll','click','touchstart','keydown','mousemove'].forEach(function(ev){
+            window.addEventListener(ev,loadAnalytics,{passive:true,once:true});
+          });
+          setTimeout(loadAnalytics,8000);
+        }
+        if(document.readyState==='complete'){schedule();}else{window.addEventListener('load',schedule);}
+      })();
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1686948372258756&ev=PageView&noscript=1" alt="" /></noscript>
 </body></html>
