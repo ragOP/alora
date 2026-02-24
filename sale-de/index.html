@@ -314,6 +314,14 @@
                 font-size: 0.8em !important;
             }
         </style>
+        <script>
+            function scrollToP4Section() {
+                var img = document.querySelector('img[data-cta-scroll-target="p4"]') || document.querySelector('img[src*="p4.png"]');
+                if (!img) return;
+                var el = img.closest('div[role="presentation"]') || img.parentElement || img;
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        </script>
     </head>
     <body class="gradient">
         <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
@@ -4607,7 +4615,7 @@
                                                 <picture style="border-radius:inherit" class="gp-contents">
                                                     <source media="(max-width: 767px)" data-srcSet="sale-de/p4.png" srcset="sale-de/p4.png"/>
                                                     <source media="(max-width: 1024px)" data-srcSet="sale-de/p4.png" srcset="sale-de/p4.png"/>
-                                                    <img src="sale-de/p4.png" alt="" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+                                                    <img data-cta-scroll-target="p4" src="sale-de/p4.png" alt="" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
                                                 </picture>
                                             </div>
                                         </div>
@@ -5282,7 +5290,7 @@
                             <button type="submit" onclick="window.location.href='https://alorament.com/cart/45733871354017:1'" style="display:none;"></button>
                             <gp-row gp-data='{"background":{"desktop":{"color":"transparent","type":"color"}},"uid":"content-row-22"}' data-id="content-row-22-row" id="content-row-22" data-same-height-subgrid-container class="content-row-22 gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--pt:4px;--pl:4px;--pb:4px;--pr:4px;--pt-mobile:0px;--pl-mobile:5px;--pb-mobile:0px;--pr-mobile:5px;--cg:8px;--rg:0px;--gtc:minmax(0, 12fr);--w:var(--g-ct-w, 1200px);--bgc:transparent;--bgi:url();--pc:start">
                                 <div data-same-height-display-contents style="--jc:center" class="gnARedO-8U gp-relative gp-flex gp-flex-col">
-                                    <a href="javascript:void(0)" id="footer-cta-scroll-welche-wahl" class="footer-cta-welche-wahl" onclick="var el=document.getElementById('footer-scroll-p4');if(el){el.scrollIntoView({behavior:'smooth',block:'center',inline:'nearest'});}return false;">SICHERE DIR 50% RABATT.</a>
+                                    <a href="javascript:void(0)" id="footer-cta-scroll-welche-wahl" class="footer-cta-welche-wahl" onclick="scrollToP4Section(); return false;">SICHERE DIR 50% RABAT.</a>
                                 </div>
                             </gp-row>
                             <input type="hidden" name="product-id" value="9134985740504"/>
