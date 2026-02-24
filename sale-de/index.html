@@ -5470,6 +5470,13 @@
             --mb-mobile: 0px !important;
         }
     }
+    /* Hide poster/thumbnail when video is playing (testimonial + any gp-lite-html5-embed) */
+    gp-lite-html5-embed.video-playing .gp-thumbnail-video {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
 </style>
 <!-- Essential GemPages component scripts -->
 <script src='https://cdn.shopify.com/extensions/019c35b2-1921-7c01-9367-ce337ed1bd90/gempages-web-builder-shopify-app-120/assets/gp-lazyload.v2.js?v=1756938901162' defer></script>
@@ -5582,6 +5589,21 @@
             video.muted = false;
             video.controls = true;
         }, true);
+
+        // Hide poster/thumbnail when video is playing so only video shows
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('gp-lite-html5-embed').forEach(function(embed) {
+                var video = embed.querySelector('video');
+                if (!video) return;
+                function updatePlaying() {
+                    embed.classList.toggle('video-playing', !video.paused);
+                }
+                video.addEventListener('playing', updatePlaying);
+                video.addEventListener('pause', updatePlaying);
+                video.addEventListener('ended', updatePlaying);
+                updatePlaying();
+            });
+        });
 
         // Fire InitiateCheckout when user clicks any buy/cart button
         document.querySelectorAll('a.gp-button-base[href*="alorament.com/cart/"], a[href*="alorament.com/cart/"]').forEach(function(button) {
