@@ -1414,6 +1414,13 @@
       if (typeof ttq !== 'undefined' && typeof ttq.track === 'function') {
         ttq.track('ClickButton');
       }
+      if (typeof fbq === 'function') {
+        fbq('track', 'AddToCart', {
+          content_name: 'Alorament Flex',
+          content_ids: ['alorament-flex'],
+          content_type: 'product'
+        });
+      }
     });
   });
   

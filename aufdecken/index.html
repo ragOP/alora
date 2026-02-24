@@ -8,10 +8,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.shopify.com">
 <link rel="preconnect" href="https://flagcdn.com">
-<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
-<link rel="preconnect" href="https://analytics.tiktok.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1686948372258756');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent');
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1686948372258756&ev=PageView&noscript=1"/>
+  </noscript>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html {
@@ -905,38 +919,6 @@
     .price-now { font-size: 48px; }
   }
 
-  /* ── STICKY BOTTOM BAR — floating CTA button ── */
-  .sticky-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    padding: 12px 16px;
-    padding-bottom: max(12px, env(safe-area-inset-bottom));
-    background: #fff;
-    border-top: 1px solid #e0e0e0;
-    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12);
-    display: none;
-  }
-  .sticky-bar.show { display: block; }
-  .sticky-bar a {
-    display: block;
-    width: 100%;
-    background: #e02020;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    padding: 20px 24px;
-    text-align: center;
-    border-radius: 6px;
-    line-height: 1.3;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .sticky-bar a:hover { background: #c0392b; transform: translateY(-1px); }
 </style>
 </head>
 <body>
@@ -1378,19 +1360,11 @@
     </div>
   </div>
 
-  <br>
-  <a href="https://alorament.com/pages/salegm" class="cta-btn" style="background:#e02020; color:white; display:block; text-align:center; padding:22px 34px; border-radius:6px; font-size:16px; font-weight:800; text-transform:uppercase; text-decoration:none; letter-spacing:0.02em;">SICHERE DIR 50% RABATT</a>
-
   <div class="footer">
     <p>ADVERTORIAL — Dies ist ein gesponserter Gesundheitsbericht. Die beschriebenen Erfahrungen sind individuelle Ergebnisse und sind möglicherweise nicht repräsentativ für alle Nutzer. Die Informationen in diesem Bericht dienen ausschließlich Bildungszwecken und stellen keine medizinische Beratung dar. Konsultiere deinen Arzt, wenn du Bedenken bezüglich deiner Gesundheit hast. Ergebnisse können variieren. Diese Aussagen wurden von keiner Regulierungsbehörde bewertet. Dieses Produkt ist nicht dazu bestimmt, Krankheiten zu diagnostizieren, zu behandeln, zu heilen oder zu verhindern.</p>
     <p style="margin-top: 10px;">© 2025 Alorament Institut. Alle Rechte vorbehalten.</p>
   </div>
 
-</div>
-
-<!-- STICKY BOTTOM BAR — floating CTA button -->
-<div class="sticky-bar" id="stickyBar">
-  <a href="https://alorament.com/pages/salegm">SICHERE DIR 50% RABATT</a>
 </div>
 
 <script>
@@ -1429,49 +1403,24 @@
     if (!was) item.classList.add('open');
   }
 
-  // CTA REDIRECT + PARAM PASSTHROUGH
-  const CTA_URL = 'https://alorament.com/pages/salegm';
-  const params = new URLSearchParams(window.location.search);
-  const ctaUrl = new URL(CTA_URL);
-  params.forEach((value, key) => ctaUrl.searchParams.set(key, value));
-  document.querySelectorAll('a.cta-btn, a[href="#"], a[href="#cta"]').forEach(btn => {
-    btn.href = ctaUrl.toString();
-  });
-  
-  // Update sticky bar link with params
-  const stickyBarLink = document.querySelector('.sticky-bar a');
-  if (stickyBarLink) {
-    stickyBarLink.href = ctaUrl.toString();
-  }
-
-  // STICKY BAR — show ONLY when trigger line comes into view
-  const stickyBar = document.getElementById('stickyBar');
-  const triggerLine = document.getElementById('trigger-line');
-  if (stickyBar && triggerLine) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const rect = entry.boundingClientRect;
-        // Show CTA if line is visible OR has been scrolled past
-        if (entry.isIntersecting || rect.top < 0) {
-          stickyBar.classList.add('show');
-        } else {
-          // Line is above viewport (user hasn't reached it) - hide CTA
-          stickyBar.classList.remove('show');
-        }
-      });
-    }, {
-      threshold: 0, // Trigger as soon as any part is visible
-      rootMargin: '0px'
-    });
-    
-    observer.observe(triggerLine);
-  }
-
   // DATE
   const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   const d = new Date();
   const el = document.getElementById('pubDate');
   if (el) el.textContent = `${months[d.getMonth()]} ${d.getFullYear()}`;
+
+  // CTA click — Facebook AddToCart
+  document.querySelectorAll('.cta-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'AddToCart', {
+          content_name: 'Alorament Flex',
+          content_ids: ['alorament-flex'],
+          content_type: 'product'
+        });
+      }
+    });
+  });
 
   // TESTIMONIAL VIDEOS
   document.querySelectorAll('.testi-video-wrap').forEach(wrap => {
@@ -1498,49 +1447,7 @@
     video.addEventListener('ended', showPaused);
   });
 
-  // Fire InitiateCheckout when user clicks any CTA to sale-de / cart
-  document.querySelectorAll('a[href*="alorament.com"], a.cta-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
-      if (typeof ttq !== 'undefined' && typeof ttq.track === 'function') ttq.track('InitiateCheckout');
-    });
-  });
-
-  // Pass click IDs from URL to all alorament links (keeps attribution to sale-de)
-  var params = new URLSearchParams(window.location.search);
-  var fbclid = params.get('fbclid');
-  var ttclid = params.get('ttclid');
-  if (fbclid || ttclid) {
-    document.querySelectorAll('a[href*="alorament.com"]').forEach(function(link) {
-      try {
-        var url = new URL(link.href, window.location.origin);
-        if (fbclid) url.searchParams.set('fbclid', fbclid);
-        if (ttclid) url.searchParams.set('ttclid', ttclid);
-        link.href = url.toString();
-      } catch (e) {}
-    });
-  }
 </script>
-<script>
-  (function(){
-    var analyticsLoaded = false;
-    function loadAnalytics() {
-      if (analyticsLoaded) return;
-      analyticsLoaded = true;
-      function loadTikTok(){!function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript";o.async=!0;o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};ttq.load('CRTG093C77U61CV1HG20');ttq.page();ttq.track('ViewContent');}(window,document,'ttq');}
-      function loadFbq(){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1686948372258756');fbq('track','PageView');fbq('track','ViewContent');}
-      loadTikTok();loadFbq();
-    }
-    function schedule() {
-      ['scroll','click','touchstart','keydown','mousemove'].forEach(function(ev) {
-        window.addEventListener(ev, loadAnalytics, { passive: true, once: true });
-      });
-      setTimeout(loadAnalytics, 8000);
-    }
-    if (document.readyState === 'complete') schedule(); else window.addEventListener('load', schedule);
-  })();
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1686948372258756&ev=PageView&noscript=1" alt="" /></noscript>
 
 </body>
 </html>
