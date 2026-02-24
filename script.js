@@ -18,14 +18,6 @@
   fbq('track', 'PageView');
   fbq('track', 'ViewContent');
 
-  function scrollToP4Section() {
-    var img = document.querySelector('img[data-cta-scroll-target="p4"]') || document.querySelector('img[src*="p4.png"]');
-    if (!img) return;
-    var el = img.closest('section') || img.parentElement || img;
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-  window.scrollToP4Section = scrollToP4Section;
-
   /* Resolve relative video URLs to absolute */
   function resolveUrl(url, base) {
     if (!url || url.indexOf('data:') === 0 || url.indexOf('http') === 0) return url;
@@ -79,14 +71,6 @@
         content_type: 'product'
       });
     }
-  }, true);
-
-  /* Footer sticky CTA: scroll to guarantee/p4 section (no navigation) */
-  document.addEventListener('click', function(e) {
-    var a = e.target && e.target.closest && e.target.closest('a#footer-cta-scroll-welche-wahl');
-    if (!a) return;
-    e.preventDefault();
-    scrollToP4Section();
   }, true);
 
   if (document.readyState === 'loading') {
