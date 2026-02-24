@@ -28,7 +28,7 @@ font-family: Rubik;
 font-weight: 400;
 font-style: normal;
 font-display: swap;
-src: url("//tryhalsten.com/cdn/fonts/rubik/rubik_n4.c2fb67c90aa34ecf8da34fc1da937ee9c0c27942.woff2") format("woff2"), url("//tryhalsten.com/cdn/fonts/rubik/rubik_n4.d229bd4a6a25ec476a0829a74bf3657a5fd9aa36.woff") format("woff");
+src: url("../sale1/fonts/rubik_n4.woff2") format("woff2");
 }
 
 @font-face {
@@ -36,7 +36,7 @@ font-family: Rubik;
 font-weight: 700;
 font-style: normal;
 font-display: swap;
-src: url("//tryhalsten.com/cdn/fonts/rubik/rubik_n7.9ddb1ff19ac4667369e1c444a6663062e115e651.woff2") format("woff2"), url("//tryhalsten.com/cdn/fonts/rubik/rubik_n7.2f2815a4763d5118fdb49ad25ccceea3eafcae92.woff") format("woff");
+src: url("../sale1/fonts/rubik_n7.woff2") format("woff2");
 }
 
 @font-face {
@@ -44,7 +44,7 @@ font-family: Rubik;
 font-weight: 400;
 font-style: italic;
 font-display: swap;
-src: url("//tryhalsten.com/cdn/fonts/rubik/rubik_i4.528fdfa8adf0c2cb49c0f6d132dcaffa910849d6.woff2") format("woff2"), url("//tryhalsten.com/cdn/fonts/rubik/rubik_i4.937396c2106c0db7a4072bbcd373d4e3d0ab306b.woff") format("woff");
+src: url("../sale1/fonts/rubik_i4.woff2") format("woff2");
 }
 
 @font-face {
@@ -52,7 +52,7 @@ font-family: Rubik;
 font-weight: 700;
 font-style: italic;
 font-display: swap;
-src: url("//tryhalsten.com/cdn/fonts/rubik/rubik_i7.e37585fef76596b7b87ec84ca28db2ef5e3df433.woff2") format("woff2"), url("//tryhalsten.com/cdn/fonts/rubik/rubik_i7.a18d51774424b841c335ca3a15ab66cba9fce8c1.woff") format("woff");
+src: url("../sale1/fonts/rubik_i7.woff2") format("woff2");
 }
 
 @font-face {
@@ -60,7 +60,7 @@ font-family: Merriweather;
 font-weight: 700;
 font-style: normal;
 font-display: swap;
-src: url("//tryhalsten.com/cdn/fonts/merriweather/merriweather_n7.19270b7a7a551caaabc4ca9d96160fde1ff78390.woff2") format("woff2"), url("//tryhalsten.com/cdn/fonts/merriweather/merriweather_n7.cd38b457ece1a89976a4da2d642ece091dc8235f.woff") format("woff");
+src: url("../sale1/fonts/merriweather_n7.woff2") format("woff2");
 }
 
 :root, .color-scheme-1 {

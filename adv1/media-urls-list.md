@@ -46,12 +46,12 @@ This document contains all image and video URLs used in the adv1/index.html file
 ## IMAGES
 
 ### Step 8: Logo Image 1
-**URL:** `https://tryhalsten.com/cdn/shop/files/Alorament-Logo-1-TIght.png`
+**URL:** `https://alorament.com/cdn/shop/files/Alorament-Logo-1-TIght.png`
 **Location:** Line 18-19
 **Description:** Main logo (OG image)
 
 ### Step 9: Logo Image 2
-**URL:** `http://tryhalsten.com/cdn/shop/files/Alorament-Logo-1-TIght.png`
+**URL:** `http://alorament.com/cdn/shop/files/Alorament-Logo-1-TIght.png`
 **Location:** Line 18
 **Description:** Main logo (HTTP version)
 
@@ -134,7 +134,7 @@ This document contains all image and video URLs used in the adv1/index.html file
 7. `https://cdn.shopify.com/videos/c/o/v/9d3c92e065e5417dbb10994b77eac7de.mp4`
 
 ### Image URLs (Base Images - 10 unique):
-1. `https://tryhalsten.com/cdn/shop/files/Alorament-Logo-1-TIght.png`
+1. `https://alorament.com/cdn/shop/files/Alorament-Logo-1-TIght.png`
 2. `https://cdn.shopify.com/s/files/1/0862/6441/4455/files/gempages_548991951790146583-6cc26315-6aee-4a65-9330-e72d54461cb5.png?v=1736754704`
 3. `https://cdn.shopify.com/s/files/1/0875/5347/4834/files/gempages_541905140408386425-566513f4-8be4-4b52-9c60-99372fb92d68.jpg?v=1754594994`
 4. `https://cdn.shopify.com/s/files/1/0862/6441/4455/files/gempages_548991951790146583-bcdbbd17-6018-4800-bba6-9975b1f96f85.webp?v=1754852417`
