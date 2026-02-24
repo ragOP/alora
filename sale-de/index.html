@@ -5471,11 +5471,13 @@
         }
     }
     /* Hide poster/thumbnail when video is playing (testimonial + any gp-lite-html5-embed) */
-    gp-lite-html5-embed.video-playing .gp-thumbnail-video {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: opacity 0.2s ease, visibility 0.2s ease;
+    gp-lite-html5-embed.video-playing .gp-thumbnail-video,
+    gp-lite-html5-embed video.is-playing ~ .gp-thumbnail-video,
+    .gp-thumbnail-video.gp-thumbnail-hidden {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
     }
 </style>
 <!-- Essential GemPages component scripts -->
@@ -5591,18 +5593,36 @@
         }, true);
 
         // Hide poster/thumbnail when video is playing so only video shows
-        document.addEventListener('DOMContentLoaded', function() {
+        function setThumbnailPlayingState(embed, video, thumb) {
+            var playing = !video.paused;
+            embed.classList.toggle('video-playing', playing);
+            video.classList.toggle('is-playing', playing);
+            if (thumb) thumb.classList.toggle('gp-thumbnail-hidden', playing);
+        }
+        function initHideThumbnailWhenPlaying() {
             document.querySelectorAll('gp-lite-html5-embed').forEach(function(embed) {
                 var video = embed.querySelector('video');
+                var thumb = embed.querySelector('.gp-thumbnail-video');
                 if (!video) return;
-                function updatePlaying() {
-                    embed.classList.toggle('video-playing', !video.paused);
-                }
-                video.addEventListener('playing', updatePlaying);
-                video.addEventListener('pause', updatePlaying);
-                video.addEventListener('ended', updatePlaying);
-                updatePlaying();
+                var run = function() { setThumbnailPlayingState(embed, video, thumb); };
+                video.addEventListener('playing', run);
+                video.addEventListener('pause', run);
+                video.addEventListener('ended', run);
+                run();
             });
+        }
+        function refreshThumbnailState() {
+            document.querySelectorAll('gp-lite-html5-embed').forEach(function(embed) {
+                var video = embed.querySelector('video');
+                var thumb = embed.querySelector('.gp-thumbnail-video');
+                if (video && thumb) setThumbnailPlayingState(embed, video, thumb);
+            });
+        }
+        document.addEventListener('DOMContentLoaded', initHideThumbnailWhenPlaying);
+        window.addEventListener('load', function() {
+            refreshThumbnailState();
+            setTimeout(refreshThumbnailState, 300);
+            setTimeout(refreshThumbnailState, 800);
         });
 
         // Fire InitiateCheckout when user clicks any buy/cart button
