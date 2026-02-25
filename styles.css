@@ -49,10 +49,13 @@ body, .gradient {
   color: rgba(var(--color-foreground), 0.75);
   background-color: rgb(var(--color-background));
   margin: 0;
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 #MainContent {
-  padding-bottom: 80px; /* space for sticky footer CTA */
+  padding-bottom: calc(80px + env(safe-area-inset-bottom)); /* space for sticky footer CTA + home indicator */
 }
 /**
  * jasmie.css – Footer section & CTA (single place for footer styles)
