@@ -15,7 +15,8 @@
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1686948372258756');
-  /* PageView and ViewContent are fired once by the inline pixel snippet in the page head to avoid duplicate events */
+  if (!window.__fbPageViewFired) { fbq('track', 'PageView'); window.__fbPageViewFired = true; }
+  if (!window.__fbViewContentFired) { fbq('track', 'ViewContent'); window.__fbViewContentFired = true; }
 
   /* Resolve relative video URLs to absolute */
   function resolveUrl(url, base) {
