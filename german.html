@@ -8,6 +8,23 @@
   <link rel="stylesheet" href="./styles.css">
   <link rel="preload" href="./assets/gempages_556819636071433409-1157d9f5-6314-4e25-9025-bb684fb0680b.webp" as="image">
 </head>
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1686948372258756');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1686948372258756&ev=PageView&noscript=1"/>
+    </noscript>
 <body class="gradient">
   <main id="MainContent" class="content-for-layout" role="main">
     <!-- Hero -->
@@ -675,5 +692,24 @@
     </section>
   </main>
   <script src="./script.js"></script>
+  <script>
+    // Fire InitiateCheckout when user clicks the buy button
+    var buyBtn = document.querySelector('.guarantee-cta-btn');
+    if (buyBtn) {
+      buyBtn.addEventListener('click', function() {
+        fbq('track', 'InitiateCheckout');
+      });
+    }
+    // Pass fbclid from URL to Shopify checkout link (keeps FB attribution)
+    var params = new URLSearchParams(window.location.search);
+    var fbclid = params.get('fbclid');
+    if (fbclid) {
+      document.querySelectorAll('a[href*="alorament.com"], a[href*="checkout"]').forEach(function(link) {
+        var url = new URL(link.href);
+        url.searchParams.set('fbclid', fbclid);
+        link.href = url.toString();
+      });
+    }
+  </script>
 </body>
 </html>
