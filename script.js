@@ -15,8 +15,7 @@
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1686948372258756');
-  fbq('track', 'PageView');
-  fbq('track', 'ViewContent');
+  /* PageView and ViewContent are fired once by the inline pixel snippet in the page head to avoid duplicate events */
 
   /* Resolve relative video URLs to absolute */
   function resolveUrl(url, base) {
