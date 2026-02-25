@@ -368,7 +368,7 @@ html { scroll-behavior: smooth; }
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 }
 
 .hero-intro__benefits li {
@@ -467,7 +467,7 @@ html { scroll-behavior: smooth; }
   }
 
   .hero-intro__subtitle { font-size: 20px; }
-  .hero-intro__benefits { gap: 0; }
+  .hero-intro__benefits { gap: 16px; }
   .hero-intro__benefits li { font-size: 18px; }
   .hero-intro__disclaimer { text-align: center; }
   .hero-intro__testimonial {
