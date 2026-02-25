@@ -901,6 +901,39 @@
   }
   .faq-item.open .faq-a { max-height: 400px; padding-bottom: 18px; }
 
+  /* ── STICKY BOTTOM BAR — footer CTA on scroll ── */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 12px 16px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12);
+    display: none;
+  }
+  .sticky-bar.show { display: block; }
+  .sticky-bar a {
+    display: block;
+    width: 100%;
+    background: #e02020;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 20px 24px;
+    text-align: center;
+    border-radius: 6px;
+    line-height: 1.3;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .sticky-bar a:hover { background: #c0392b; transform: translateY(-1px); }
+
   /* ── FOOTER ── */
   .footer {
     border-top: 1px solid #e5e5e5;
@@ -1239,7 +1272,7 @@
   <p>Wir haben den regulären Preis auf <strong>360 €</strong> festgelegt. Weil ich zu vielen Frauen gegenübergesessen habe, denen gesagt wurde, sie sollten das einfach als ihr neues Leben akzeptieren. Jede Frau, die das braucht, verdient Zugang dazu.</p>
   <p><strong>Aber das ist nicht das, was du heute zahlen musst.</strong></p>
 
-  <div class="section-q">Wie bekomme ich den Alorament Flex mit 50 % Rabatt?</div>
+  <div class="section-q" id="trigger-line">Wie bekomme ich den Alorament Flex mit 50 % Rabatt?</div>
 
   <!-- MID CTA -->
   <div class="cta-block" id="cta">
@@ -1360,6 +1393,11 @@
     </div>
   </div>
 
+<!-- STICKY BOTTOM BAR — footer CTA when scrolled to section -->
+<div class="sticky-bar" id="stickyBar">
+  <a href="https://alorament.com/pages/salegm">SICHERE DIR 50% RABATT</a>
+</div>
+
   <div class="footer">
     <p>ADVERTORIAL — Dies ist ein gesponserter Gesundheitsbericht. Die beschriebenen Erfahrungen sind individuelle Ergebnisse und sind möglicherweise nicht repräsentativ für alle Nutzer. Die Informationen in diesem Bericht dienen ausschließlich Bildungszwecken und stellen keine medizinische Beratung dar. Konsultiere deinen Arzt, wenn du Bedenken bezüglich deiner Gesundheit hast. Ergebnisse können variieren. Diese Aussagen wurden von keiner Regulierungsbehörde bewertet. Dieses Produkt ist nicht dazu bestimmt, Krankheiten zu diagnostizieren, zu behandeln, zu heilen oder zu verhindern.</p>
     <p style="margin-top: 10px;">© 2025 Alorament Institut. Alle Rechte vorbehalten.</p>
@@ -1421,6 +1459,35 @@
       }
     });
   });
+  const stickyBarLink = document.querySelector('.sticky-bar a');
+  if (stickyBarLink) {
+    stickyBarLink.addEventListener('click', function() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'AddToCart', {
+          content_name: 'Alorament Flex',
+          content_ids: ['alorament-flex'],
+          content_type: 'product'
+        });
+      }
+    });
+  }
+
+  // STICKY BAR — show when user scrolls to trigger section
+  const stickyBar = document.getElementById('stickyBar');
+  const triggerLine = document.getElementById('trigger-line');
+  if (stickyBar && triggerLine) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const rect = entry.boundingClientRect;
+        if (entry.isIntersecting || rect.top < 0) {
+          stickyBar.classList.add('show');
+        } else {
+          stickyBar.classList.remove('show');
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px' });
+    observer.observe(triggerLine);
+  }
 
   // TESTIMONIAL VIDEOS
   document.querySelectorAll('.testi-video-wrap').forEach(wrap => {
