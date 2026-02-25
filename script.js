@@ -73,41 +73,15 @@
     }
   }, true);
 
-  /* Footer CTA: scroll to guarantee section (180 € add-to-cart) – position-based smooth scroll (no hash, no scrollIntoView) */
-  function smoothScrollToPosition(duration, targetPosition) {
-    var startPosition = window.pageYOffset;
-    var distance = targetPosition - startPosition;
-    var startTime = null;
-
-    function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      var timeElapsed = currentTime - startTime;
-      var run = ease(timeElapsed, startPosition, distance, duration);
-      window.scrollTo(0, run);
-      if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
-
-    function ease(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return (c / 2) * t * t + b;
-      t--;
-      return (-c / 2) * (t * (t - 2) - 1) + b;
-    }
-
-    requestAnimationFrame(animation);
-  }
-
+  /* Footer CTA: scroll to guarantee section (180 € add-to-cart) – scrollIntoView = always correct */
   function initFooterCtaScroll() {
     var footerCta = document.querySelector('.footer-cta-welche-wahl');
     if (!footerCta) return;
-    var cartCta = document.querySelector('a.guarantee-cta-btn[href*="alorament.com/cart"]');
-    var target = cartCta && cartCta.closest && cartCta.closest('.guarantee-section__card');
-    if (!target) target = document.getElementById('section-guarantee');
+    var target = document.getElementById('section-guarantee');
     if (!target) return;
-    footerCta.addEventListener('click', function() {
-      var rect = target.getBoundingClientRect();
-      var targetPosition = rect.top + window.pageYOffset;
-      smoothScrollToPosition(1000, targetPosition);
+    footerCta.addEventListener('click', function(e) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
 
