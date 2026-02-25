@@ -1343,6 +1343,7 @@ html { scroll-behavior: smooth; }
 
 .recovery-framework__video-wrap {
   aspect-ratio: 1;
+  min-height: 200px;
   overflow: hidden;
   background: #000;
 }
@@ -1405,6 +1406,9 @@ html { scroll-behavior: smooth; }
   .recovery-framework__grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+  .recovery-framework__video-wrap {
+    min-height: 260px;
   }
   .recovery-framework__phase {
     font-size: 18px;

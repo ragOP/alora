@@ -36,6 +36,36 @@
     });
   }
 
+  /* Recovery framework: play muted videos when in view (mobile Safari often blocks autoplay until in viewport) */
+  function initRecoveryFrameworkVideos() {
+    var videos = document.querySelectorAll('.recovery-framework__video');
+    if (!videos.length) return;
+    var io = typeof IntersectionObserver !== 'undefined' ? new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        var v = entry.target;
+        if (!v || v.tagName !== 'VIDEO') return;
+        v.muted = true;
+        if (entry.isIntersecting) {
+          v.play().catch(function() {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { rootMargin: '20%', threshold: 0.1 }) : null;
+    if (io) {
+      videos.forEach(function(v) {
+        v.muted = true;
+        v.play().catch(function() {});
+        io.observe(v);
+      });
+    } else {
+      videos.forEach(function(v) {
+        v.muted = true;
+        v.play().catch(function() {});
+      });
+    }
+  }
+
   /* Testimonials proof: play button toggles video */
   function initTestimonialPlay() {
     document.querySelectorAll('.testimonials-proof__play').forEach(function(btn) {
@@ -88,11 +118,13 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       initVideos();
+      initRecoveryFrameworkVideos();
       initTestimonialPlay();
       initFooterCtaScroll();
     });
   } else {
     initVideos();
+    initRecoveryFrameworkVideos();
     initTestimonialPlay();
     initFooterCtaScroll();
   }
